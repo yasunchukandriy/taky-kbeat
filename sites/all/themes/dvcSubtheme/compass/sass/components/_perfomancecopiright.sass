@@ -1,0 +1,40 @@
+.perfomanc
+	.block-content
+		text-align: right
+		+fs(14)
+		line-height: 78px
+		position: relative
+		&:before
+			content: ''
+			width: 0px
+			height: 78px
+			display: inline-block
+			border-left: 1px solid rgba(255, 255, 255, 0.2)
+			position: absolute
+			left: 0
+			top: 0
+			bottom: 0
+		p
+			&:after
+				content: ""
+				+s(perfomance)
+				display: inline-block
+				position: relative
+				right: -5px
+				top: -5px
+		a
+			color: $active-color-menu
+			text-decoration: underline
+			&:hover
+				color: $link-color
+				text-decoration: none
+				
+@media only screen and (max-width : 480px)
+	.perfomanc
+		.block-content
+			line-height: 2
+			text-align: center
+			&:before
+				display: none
+			a
+				display: block

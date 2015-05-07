@@ -1,0 +1,172 @@
+.modal-dialog
+	border: $bg-wrapper-border
+	.modal-content
+		background-color: $bg-wrapper-pages
+		padding: 28px
+		border: 0px
+		border-radius: 0
+		
+		.modal-body
+			width: 508px
+			max-width: 100%
+			margin: 0 auto
+			box-sizing: border-box
+		
+		.modal-header
+			text-align: center
+			position: relative
+			border-bottom: 0px
+			.close
+				position: absolute
+				top: 0
+				right: 0
+				z-index: 1
+			.title
+				+fs(24)
+				margin: 0 auto
+				color: $h1-title-color
+				font-family: $font-family-ptsans
+				font-weight: 400
+				padding: 0 5px 40px
+				line-height: 1.1
+				display: inline-block
+				width: 480px
+				position: relative
+				overflow: hidden
+				text-align: left
+				max-width: 100%
+				&:after
+					content: ''
+					display: block
+					+bs('shadow-modal.png')
+					position: absolute
+					bottom: 0
+					left: 0
+					right: 0
+					margin: 0 auto
+					width: 100%
+		.webform-submit
+			color: $prosto-white
+			+fs(20)
+			border: none
+			border-radius: 0px
+			background-color: $button-bg-deff
+			height: 67px
+			padding: 20px 5px
+			text-align: center
+			width: 180px
+			line-height: 1.2
+			font-family: $font-family-ptsans
+			font-weight: 400
+			&:hover
+				background-color: $button-bg-deffhover
+				
+				
+	.webform-client-form
+		text-align: center
+		.form-item
+			text-align: left
+			clear: both
+			margin-bottom: 20px
+			display: table//inline-block
+			label
+				color: $prosto-darkengrey-color
+				+fs(18)
+				float: none//left
+				margin-right: 3px
+				margin-bottom: 0px
+				line-height: 24px
+				width: auto//86px
+				display: table-cell
+				vertical-align: bottom
+				position: relative
+				.form-required
+					color: $h1-title-color
+					float: left
+					position: absolute
+					left: -12px
+					top: 0px
+					+fs(12)
+			input.form-control,
+			input.form-email
+				font-family: $font-family-ptsans
+				font-weight: 400
+				float: none//left
+				background-color: transparent
+				border: none
+				border-bottom: 1px solid #a4a4a4
+				border-radius: 0
+				outline: none
+				width: 100%//calc(100% - 110px)
+				display: table-cell
+				padding: 0px
+				box-shadow: none
+				line-height: 1
+				height: auto
+				+fs(18)
+				color: $prosto-darkengrey-color
+				&:focus,
+				&:active,
+				&:hover
+					outline: none
+					box-shadow: none
+				
+		.webform-component-textarea
+			position: relative
+			label
+				position: absolute
+				color: #adadad
+				top: 10px
+				left: 10px
+				width: auto
+				.form-required
+					left: -22px
+					top: -10px
+			textarea
+				font-family: $font-family-ptsans
+				font-weight: 400
+				color: #adadad
+				border: 0px
+				resize: vertical
+				+fs(18)
+				max-width: 100%
+				border-radius: 0px
+		button.webform-submit
+			margin: 0 auto
+		
+		.captcha
+			background-color: transparent
+			border: none
+			legend
+				color: $prosto-darkengrey-color
+				border: none
+				background-color: transparent
+				padding: 2px 5px
+				margin-bottom: 3px
+				.fieldset-legend
+					font-weight: 400
+					+fs(18)
+					font-family: $font-family-ptsans
+			.panel-body
+				padding: 2px 5px
+				color: $prosto-darkengrey-color
+				line-height: 1.1
+				.help-block
+					color: $prosto-darkengrey-color
+					line-height: 1.1
+				img
+					float: left
+					margin-right: 5px
+				.form-item-captcha-response
+					float: left
+					width: 100%
+					label
+						width: auto
+						min-width: 250px
+						max-width: 100%
+					input
+						width: auto
+						min-width: 150px
+						max-width: 100%
+						
+					

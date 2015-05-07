@@ -1,0 +1,373 @@
+
+.page-article-term,
+.page-video,
+.page-video-all,
+.page-camps,
+.page-foto,
+.page-foto-all,
+.page-camps-all
+	.content-wrapper-bg-opacity
+		border: $bg-wrapper-border
+		.content-wrapper-bg
+			background-color: $bg-wrapper-pages
+			padding: 28px
+			position: relative
+			.page-header
+				@extend h1
+				clear: both
+			#block-custom-follow-us
+				position: absolute
+				right: 35px
+				top: 42px
+
+.page-node
+	.content-wrapper-bg-opacity
+		border: $bg-wrapper-border
+		.content-wrapper-bg
+			background-color: $bg-wrapper-pages
+			padding: 28px
+			position: relative
+			.page-header
+				@extend h1
+				clear: both
+				width: calc(100% - 210px)
+			#block-custom-follow-us
+				position: absolute
+				right: 34px
+				top: 42px
+			.print_html
+				.print-page 
+					top: -122px
+					right: 27px
+
+
+@media only screen and (max-width : 480px)
+	.page-video-all,
+	.page-camps,
+	.page-foto,
+	.page-foto-all,
+	.page-camps-all
+		.content-wrapper-bg-opacity
+			.content-wrapper-bg
+				#block-custom-follow-us
+					position: inherit
+					margin: 5px auto
+					clear: both
+
+	.page-node
+		.content-wrapper-bg-opacity
+			.content-wrapper-bg
+				#block-custom-follow-us
+					position: inherit
+					right: 0
+					top: 0
+					margin: 5px auto
+	
+//node page
+.page-node
+	.node
+		.field-name-foto-and-video-label-rewies,
+		.field-name-foto-and-video-label-equipment,
+		.field-name-diet,
+		.field-name-technik,
+		.field-name-foto-and-video-label-culture,
+		.field-name-foto-and-video-label-news,
+		.field-name-foto-and-video-label-traumas,
+			font-family: $font-family-ptsans
+			padding: 25px 0 0px
+			margin: 15px 0 25px 0
+			position: relative
+			color: #565656
+			+fs(24)
+			width: 100%
+			font-weight: 400
+			&:after 
+				content: ''
+				display: block
+				+bs('long-shadow.png')
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				margin: 0 auto
+				width: 98%
+				background-position: top center
+				max-width: 1160px
+		.field-name-field-foto,
+		.field-name-field-video-sta,
+		.field-name-field-avi-mp4-mpeg-3gp-mkv
+			.field-item
+				margin: 9px
+				float: left
+				position: relative
+				z-index: 2
+				width: 275px
+				height: 195px
+				overflow: hidden
+				a
+					&:before
+						content: ''
+						display: none
+						position: absolute
+						top: 0
+						left: 0
+						right: 0
+						bottom: 0
+						border: 9px solid transparent
+						opacity: 0
+				a:hover:before,
+				a:focus:before
+					border-color: #b51111
+					opacity: 1
+					display: block
+					
+		.field-name-field-avi-mp4-mpeg-3gp-mkv
+			a
+				&:before
+					content: ''
+					background-image: url('../images/lookvid.png')
+					background-position: center center
+					background-repeat: no-repeat
+			.file-video
+				overflow: hidden
+				video
+					position: relative
+					height: 192px
+					z-index: -1
+					
+		.field-name-field-foto
+			a
+				&:before
+					content: ''
+					background-image: url('../images/lookim.png')
+					background-position: center center
+					background-repeat: no-repeat
+					
+		.field-name-field-video-sta
+			a
+				&:before
+					content: ''
+					background-image: url('../images/lookvid.png')
+					background-position: center center
+					background-repeat: no-repeat
+		
+		
+		
+		
+		.field-name-tags-article,
+		.field-name-tags-interview,
+		.field-name-eqiupment1,
+		.view-taxonomy-term-inslide,
+		.field-name-tegs-culture,
+		.field-name-technics-tegs,
+		.field-name-foto-tags,
+		.field-name-traumas,
+		.field-name-tags-interview,
+		.field-name-news2
+			width: 100%
+			clear: both
+		
+		
+		.field-name-foto-and-video-label-article
+			clear: both
+			.field-item 
+				font-family: $font-family-ptsans
+				color: #565656//$h1-title-color
+				+fs(24)
+				width: 100%
+				font-weight: 400
+				padding: 25px 0 0px
+				margin: 0 0 25px 0
+				position: relative
+				&:after 
+					content: ''
+					display: block
+					+bs('long-shadow.png')
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					margin: 0 auto
+					width: 98%
+					background-position: top center
+					max-width: 1160px
+		.redh2title,
+		.field-name-simular-rewies,
+		.field-name-eqiupment2,
+		.field-name-pitanie,
+		.field-name-simular-cultures,
+		.field-name-technics-simular,
+		.field-name-traumas2,
+		.field-name-simular-video,
+		.field-name-simular-foto,
+		.field-name-news1
+			clear: both
+			h2
+				font-family: $font-family-ptsans
+				color: $h1-title-color
+				+fs(24)
+				width: 100%
+				font-weight: 400
+				padding: 25px 0 0px
+				margin: 0 0 25px 0
+				position: relative
+				&:after 
+					content: ''
+					display: block
+					+bs('long-shadow.png')
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					margin: 0 auto
+					width: 98%
+					background-position: top center
+					max-width: 1160px
+	
+
+.field-name-simular-article-in-foto
+	clear: both
+	h2
+		font-family: $font-family-ptsans
+		color: $h1-title-color
+		+fs(24)
+		width: 100%
+		font-weight: 400
+		padding: 25px 0 0px
+		margin: 0 0 25px 0
+		position: relative
+	
+	
+.field-name-simular-article,	
+.redh2title
+	clear: both
+	h2
+		font-family: $font-family-ptsans
+		color: $h1-title-color
+		+fs(24)
+		width: 100%
+		font-weight: 400
+		padding: 25px 0 0px
+		margin: 0 0 25px 0
+		position: relative
+		&:after 
+			content: ''
+			display: block
+			+bs('long-shadow.png')
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			margin: 0 auto
+			width: 98%
+			background-position: top center
+			max-width: 1160px
+
+
+//node rewrite dorab
+.node
+	.field-name-field-date-publication
+		color: #9a9a9a
+		+fs(16)
+		padding: 0 0px 30px
+		margin-bottom: 10px
+		display: block
+		float: left
+		width: 100%
+		position: relative
+
+	.field-name-field-date-publication:after
+		content: ""
+		display: block
+		background-image: url('../images/long-shadow.png')
+		background-position: 0 0
+		background-repeat: no-repeat
+		background-color: transparent
+		height: 13px
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		margin: 0 auto
+		width: 98%
+		background-position: top center
+		max-width: 1160px
+		visibility: visible
+
+	.field-name-field-date-publication
+		.field-label
+			font-weight: 300
+			color: #9a9a9a
+
+	.field-name-body
+		+fs(16)
+		color: #101010
+		
+	.field-name-foto-and-video-label-article 
+		display: none
+
+.field-name-tags-article .view-content .views-row .field-content,
+.field-name-tags-article .view-content .views-row a,
+.view-taxonomy-term-inslide .view-content .views-row .field-content,
+.view-taxonomy-term-inslide .view-content .views-row a,
+.view-taxonomy-terms .view-content .views-row .field-content,
+.view-taxonomy-terms .view-content .views-row a 
+	padding: 0 12px
+
+.advertise-block 
+	clear: both
+	
+	
+.page-node
+	.node.node-statya.view-mode-full,
+	.row
+		.col-sm-12
+			position: static
+			
+	.content-wrapper-bg-opacity
+		.content-wrapper-bg
+			.print_html
+				.print-page
+					top: -21px
+					right: 27px
+					
+					
+					
+					
+					
+					
+					
+					
+//Second follow us block
+.page-node
+	.node
+		.field.field-name-tags-article
+			clear: both
+			width: calc(100% - 210px)
+		.field-name-follow-us
+			position: relative
+			margin: 1px 0
+			width: 100%
+			clear: both
+			padding: 0px
+			.field-items
+				position: absolute
+				top: -47px
+				right: 0px
+		
+		
+@media only screen and (max-width : 480px)
+	.page-node
+		.node
+			.field.field-name-tags-article
+				width: 100%
+			.field-name-follow-us
+				clear: both
+				.field-items
+					position: inherit
+					top: 0
+					right: auto
+					margin: 5px auto 15px
+					clear: both
+					
+					

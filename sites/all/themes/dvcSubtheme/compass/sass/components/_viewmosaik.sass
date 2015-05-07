@@ -1,0 +1,1202 @@
+//Mosaik big
+.mosaik-preview
+	>.view-content
+		max-width: 100%
+		>.views-row
+			float: left
+			width: 408px
+			height: 240px
+			background: #000000
+			border: 0px solid #000
+			margin: 0 0px 15px
+			overflow: hidden
+		>.views-row.vertical
+			height: 495px
+			background: #000
+			margin: 0 0 15px
+			position: relative
+			.views-field-title
+				position: absolute
+				top: 25px
+				right: 20px
+				line-height: 1.2
+				z-index: 3
+				color: ffffff
+				+fs(36)
+				font-family: nSpm
+			
+		.views-row.horizontal// deffoult horizont
+			.views-field-nothing
+				padding: 20px
+				overflow: hidden
+				line-height: 1.1
+				.tittle-zona
+					.title
+						clear: both
+						margin: 0 0 5px 0
+						a
+							color: #fff
+							+fs(24)
+							font-family: nSpr
+							font-weight: 400
+							overflow: hidden
+							&:hover
+								text-decoration: none
+								color: #B51111
+							
+					.body
+						color: #b1b1b1
+						+fs(14)
+						overflow: hidden
+						font-family: $font-family-base
+			.foto-zona
+				float: left
+				width: 50%
+				position: relative
+				overflow: hidden
+				img
+					//max-width: 240px
+					//width: 220px
+					//height: 240px
+					max-width: none
+					width: none
+					max-height: 240px
+					margin-left: -15px
+					-webkit-transition: margin 1s ease
+					-moz-transition: margin 1s ease
+					-o-transition: margin 1s ease
+					-ms-transition: margin 1s ease
+					transition: margin 1s ease
+				.black-image
+					opacity: 1
+					position: absolute
+					top: 0
+					left: 0
+					-webkit-transition: opacity 1s ease
+					-moz-transition: opacity 1s ease
+					-o-transition: opacity 1s ease
+					-ms-transition: opacity 1s ease
+					transition: opacity 1s ease
+				.original-image
+					opacity: 0
+					-webkit-transition: opacity 1s ease
+					-moz-transition: opacity 1s ease
+					-o-transition: opacity 1s ease
+					-ms-transition: opacity 1s ease
+					transition: opacity 1s ease
+					opacity: 0
+		.views-row.horizontal:hover
+			.foto-zona
+				img
+					margin-left: 0px
+				.black-image
+					opacity: 0
+				.original-image
+					opacity: 1
+		
+		
+		.views-row.horizontal.image-left//left styling
+			.views-field-nothing
+				padding: 20px 20px 20px 10px
+				overflow: hidden
+				line-height: 1.1
+				max-height: 220px
+				float: right
+				width: 50%
+				.foto-zona
+					float: left
+					width: 50%
+					position: relative
+					overflow: hidden
+					img
+						//width: 240px
+						//height: 240px
+						//margin-left: -15px
+						max-width: none
+						width: none
+						max-height: 240px
+						-webkit-transition: margin 1s ease
+						-moz-transition: margin 1s ease
+						-o-transition: margin 1s ease
+						-ms-transition: margin 1s ease
+						transition: margin 1s ease
+					.black-image
+						opacity: 1
+						position: absolute
+						top: 0
+						left: 0
+					.original-image
+						opacity: 0
+			.views-field-field-video-sta,
+			.views-field-field-add-video-computer
+				display: none
+				
+		.views-row.horizontal.image-right//right styling
+			.views-field-nothing
+				padding: 20px 10px 20px 20px
+				overflow: hidden
+				line-height: 1.1
+				max-height: 220px
+				float: left
+				width: 50%
+				.foto-zona
+					float: right
+					width: 50%
+					position: relative
+					overflow: hidden
+					img
+						//width: 240px
+						//height: 240px
+						max-width: none
+						width: none
+						max-height: 240px
+						margin-left: -30px
+						-webkit-transition: margin 1s ease
+						-moz-transition: margin 1s ease
+						-o-transition: margin 1s ease
+						-ms-transition: margin 1s ease
+						transition: margin 1s ease
+					.black-image
+						opacity: 1
+						position: absolute
+						top: 0
+						left: 0
+					.original-image
+						opacity: 0
+					
+			.views-field-field-video-sta,
+			.views-field-field-add-video-computer
+				display: none
+			
+			
+		.views-row.horizontal
+			.views-field-field-video-sta,
+			.views-field-field-add-video-computer
+				width: 100%
+				float: left
+				overflow: hidden
+				height: 240px
+				position: relative
+				.colorbox
+					display: block
+					&:before
+						content: ''
+						position: absolute
+						top: 50%
+						left: 50%
+						margin: -58.5px 0 0 -58.5px
+						display: block
+						+s(vid-ico)
+				.colorbox:hover
+					&:before
+						content: ''
+						opacity: 0.7
+				img
+					width: 100%
+					height: 240px
+					max-width: 408px
+				video
+					width: 100%
+				a,
+				a:focus,
+				a:hover,
+				a:active
+					outline: none
+					box-shadow: none
+					
+			.views-field-field-add-video-computer + .views-field-nothing,
+			.views-field-field-video-sta + .views-field-nothing
+				float: none
+				width: 50%
+				height: 220px
+				overflow: hidden
+				//display: none
+				.tittle-zona
+					.title
+						display: block
+						position: absolute
+						z-index: 1000
+						top: 10px
+						left: 20px
+					.body
+						display: none
+			.views-field-field-add-video-computer + .views-field-nothing+ .views-field-nothing-1,
+			.views-field-field-video-sta + .views-field-nothing+ .views-field-nothing-1
+				display: none
+			
+		.views-row.horizontal.fototwo
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+			.views-field-nothing
+				display: none
+			.foto-zona
+				width: 100%
+				float: left
+				position: relative
+				display: block
+				height: 240px
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					z-index: 4
+					+s(foto-ico)
+					top: 50%
+					left: 50%
+					margin: -35.5px 0 0 -35.5px
+					
+				.black-image
+					width: 100%
+					img
+						position: absolute
+						margin-left: 0px
+						height: 240px
+						width: 50% //204px
+					>a:first-child
+						img
+							width: 50%
+							left: 0px
+							top: 0px
+							float: left
+							display: block
+							/*opacity: 1*/
+						
+					>a:last-child
+						img
+							left: 50%//204px
+							top: 0px
+							float: left
+							display: block
+							/*opacity: 1*/
+				.original-image
+					img
+						margin-left: 0px
+						position: absolute
+					>a:first-child
+						img
+							left: 0px
+							top: 0px
+							float: left
+							display: block
+							width: 50%
+							/*opacity: 0*/
+							overflow: hidden
+					>a:last-child
+						img
+							right: 0px
+							top: 0px
+							float: left
+							display: block
+							width: 50%
+							/*opacity: 0*/
+						
+						
+		.views-row.horizontal.fototwo:hover
+			.foto-zona
+				.black-image
+					img
+						margin-left: 0px
+					>a:first-child
+						img
+							float: left
+							display: block
+							/*width: 50%*/
+							/*opacity: 0*/
+					>a:last-child
+						img
+							float: left
+							display: block
+							/*width: 50%*/
+							/*opacity: 0*/
+				.original-image
+					img
+						margin-left: 0px
+						width: 50%//204px
+					>a:first-child
+						img
+							float: left
+							display: block
+							//opacity: 1
+					>a:last-child
+						img
+							float: left
+							display: block
+							//width: 50%
+							//opacity: 1
+						
+		//-------------------------
+		.views-row.vertical
+			position: relative
+			overflow: hidden
+			.views-field-field-video-sta,
+			.views-field-field-add-video-computer
+				display: none		
+			.views-field-nothing
+				.title
+					a
+						position: absolute
+						z-index: 3
+						+fs(36)
+						font-family: nSpm
+						font-weight: normal
+						color: #fff
+						max-width: 100%
+						left: 30px
+						&:hover
+							color: $link-hover-color
+							text-decoration: none
+				.body
+					position: absolute
+					bottom: 0
+					left: 0
+					right: 0
+					background: url("../images/h-f-bg.png") repeat left top rgba(0, 0, 0, 0)
+					padding: 20px
+					overflow: hidden
+					z-index: 3
+			.views-field-nothing-1
+				.bx-wrapper
+					height: 495px
+					width: 100%
+					margin: 0px
+					border: 0px
+					left: 0
+					background: #000
+					box-shadow: none
+					.bx-viewport
+						margin: 0px
+						border: 0px
+						background: #000
+						box-shadow: none
+						left: 0
+					.bx-pager
+						position: absolute
+						bottom: 10px
+						
+						
+		.views-row.vertical.title-left-down,
+		.views-row.vertical.title-right-down
+			.views-field-field-video-sta,
+			.views-field-field-add-video-computer
+				display: none
+			.title
+				a
+					bottom: 80px
+					top auto
+					left: 30px
+			.body
+				display: none
+				
+		.views-row.vertical.title-left-up
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+			.title
+				a
+					top: 20px
+					right: 20px
+					top auto
+					left: 30px
+					text-align: left
+			.body
+				display: block
+		
+		.views-row.vertical.title-right-up
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+			.title
+				a
+					top: 20px
+					right: 20px
+					top auto
+					left: 30px
+					text-align: right
+			.body
+				display: block
+				
+		.views-row.vertical.title-center
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+			.title
+				display: table
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 495px
+				a
+					top: 0px
+					right: 0px
+					left: 0
+					bottom: 0px
+					position: relative
+					text-align: center
+					padding: 20px
+					height: 495px
+					width: 408px
+					max-width: 100%
+					display: table-cell
+					vertical-align: middle
+			.body
+				display: none
+		
+				
+		.views-row.vertical.animab
+			.foto-zona
+				float: left
+				width: 100%
+				position: relative
+				overflow: hidden
+				img
+					max-width: 100%
+					width: 408px
+					height: 495px
+					margin-left: 0px
+				.black-image
+					opacity: 1
+					position: absolute
+					top: 0
+					left: 0
+					-webkit-transition: opacity 1s ease
+					-moz-transition: opacity 1s ease
+					-o-transition: opacity 1s ease
+					-ms-transition: opacity 1s ease
+					transition: opacity 1s ease
+				.original-image
+					opacity: 0
+					-webkit-transition: opacity 1s ease
+					-moz-transition: opacity 1s ease
+					-o-transition: opacity 1s ease
+					-ms-transition: opacity 1s ease
+					transition: opacity 1s ease
+		.views-row.vertical.animab:hover
+			.foto-zona
+				img
+					margin-left: 0px
+				.black-image
+					opacity: 0
+				.original-image
+					opacity: 1
+					
+		/*.views-row.depicting:hover
+			.foto-zona
+				float: left
+				width: 50%
+				img
+					margin-left: 15px
+				.black-image
+					-webkit-transition: opacity 1s ease
+					-moz-transition: opacity 1s ease
+					-o-transition: opacity 1s ease
+					-ms-transition: opacity 1s ease
+					transition: opacity 1s ease
+					opacity: 0
+				.original-image
+					opacity: 1
+					-webkit-transition: opacity 1s ease
+					-moz-transition: opacity 1s ease
+					-o-transition: opacity 1s ease
+					-ms-transition: opacity 1s ease
+					transition: opacity 1s ease*/
+		
+		
+
+// Mosaik iinr pages small		
+.mosaik-preview-inslide
+	>.view-content
+		max-width: 100%
+		>.views-row
+			float: left
+			width: 380px
+			height: 240px
+			background: #000000
+			border: 0px solid #fff
+			margin: 0 0px 15px
+			overflow: hidden
+		>.views-row.vertical
+			height: 495px
+			background: #fff
+			margin: 0 0 15px
+			position: relative
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none !important
+			.views-field-title
+				position: absolute
+				top: 25px
+				right: 20px
+				line-height: 1.2
+				z-index: 3
+				color: ffffff
+				+fs(36)
+				font-family: nSpm
+			
+		.views-row.horizontal//
+			.tittle-zona
+				float: left
+				width: 100%
+			.foto-zona
+				float: left
+				width: 50%
+				position: relative
+				overflow: hidden
+				img
+					margin-left: 0px
+					-webkit-transition: margin 1s ease
+					-moz-transition: margin 1s ease
+					-o-transition: margin 1s ease
+					-ms-transition: margin 1s ease
+					transition: margin 1s ease
+				.black-image
+					opacity: 1
+					position: absolute
+					top: 0
+					left: 0
+				.original-image
+					opacity: 0
+					
+					
+		.views-row.horizontal// deffoult horizont
+			.views-field-nothing
+				padding: 20px
+				overflow: hidden
+				line-height: 1.1
+				.tittle-zona
+					.title
+						clear: both
+						margin: 0 0 5px 0
+						a
+							color: #fff
+							+fs(24)
+							font-family: nSpr
+							font-weight: 400
+							overflow: hidden
+							&:hover
+								text-decoration: none
+								color: #B51111							
+					.body
+						color: #b1b1b1
+						+fs(14)
+						overflow: hidden
+						font-family: $font-family-base
+			.foto-zona
+				float: left
+				width: 50%
+				position: relative
+				overflow: hidden
+				img
+					//max-width: 240px
+					//width: 220px
+					//height: 240px
+					max-width: none
+					width: none
+					max-height: 240px
+					margin-left: -15px
+					-webkit-transition: margin 1s ease
+					-moz-transition: margin 1s ease
+					-o-transition: margin 1s ease
+					-ms-transition: margin 1s ease
+					transition: margin 1s ease
+				.black-image
+					opacity: 1
+					position: absolute
+					top: 0
+					left: 0
+				.original-image
+					opacity: 0
+		.views-row.horizontal:hover
+			.foto-zona
+				img
+					margin-left: 0px
+				.black-image
+					-webkit-transition: opacity 1s ease
+					-moz-transition: opacity 1s ease
+					-o-transition: opacity 1s ease
+					-ms-transition: opacity 1s ease
+					transition: opacity 1s ease
+					opacity: 0
+				.original-image
+					opacity: 1
+					-webkit-transition: opacity 1s ease
+					-moz-transition: opacity 1s ease
+					-o-transition: opacity 1s ease
+					-ms-transition: opacity 1s ease
+					transition: opacity 1s ease
+		
+		
+		.views-row.horizontal.image-left//left styling
+			.views-field-nothing
+				padding: 20px 20px 20px 10px
+				overflow: hidden
+				line-height: 1.1
+				max-height: 220px
+				float: right
+				width: 50%
+				.foto-zona
+					float: left
+					width: 50%
+					position: relative
+					overflow: hidden
+					img
+						//width: 240px
+						//height: 240px
+						max-width: none
+						width: none
+						max-height: 240px
+						margin-left: -15px
+						-webkit-transition: margin 1s ease
+						-moz-transition: margin 1s ease
+						-o-transition: margin 1s ease
+						-ms-transition: margin 1s ease
+						transition: margin 1s ease
+					.black-image
+						opacity: 1
+						position: absolute
+						top: 0
+						left: 0
+					.original-image
+						opacity: 0
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+				
+		.views-row.horizontal.image-right//right styling
+			.views-field-nothing
+				padding: 20px 10px 20px 20px
+				overflow: hidden
+				line-height: 1.1
+				max-height: 220px
+				float: left
+				width: 50%
+				.foto-zona
+					float: right
+					width: 50%
+					position: relative
+					overflow: hidden
+					img
+						//width: 240px
+						//height: 240px
+						max-width: none
+						width: none
+						max-height: 240px
+						margin-left: -30px
+						-webkit-transition: margin 1s ease
+						-moz-transition: margin 1s ease
+						-o-transition: margin 1s ease
+						-ms-transition: margin 1s ease
+						transition: margin 1s ease
+					.black-image
+						opacity: 1
+						position: absolute
+						top: 0
+						left: 0
+					.original-image
+						opacity: 0
+					
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+			
+			
+		.views-row.horizontal
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				width: 100%
+				float: left
+				overflow: hidden
+				height: 240px
+				position: relative
+				.colorbox
+					display: block
+					&:before
+						content: ''
+						position: absolute
+						top: 50%
+						left: 50%
+						margin: -58.5px 0 0 -58.5px
+						display: block
+						+s(vid-ico)
+				.colorbox:hover
+					&:before
+						content: ''
+						opacity: 0.7	
+				img
+					width: 100%
+					height: 240px
+					max-width: 408px
+			.views-field-field-add-video-computer  + .views-field-nothing,
+			.views-field-field-video-sta + .views-field-nothing
+				float: none
+				width: 50%
+				height: 220px
+				overflow: hidden
+				//display: none
+				.tittle-zona
+					.title
+						display: block
+						position: absolute
+						z-index: 1000
+						top: 10px
+						left: 20px
+					.body
+						display: none
+			.views-field-field-add-video-computer + .views-field-nothing+ .views-field-nothing-1,
+			.views-field-field-video-sta + .views-field-nothing+ .views-field-nothing-1
+				display: none
+			
+			
+		.views-row.vertical
+			position: relative
+			overflow: hidden
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+			.views-field-nothing
+				.title
+					a
+						position: absolute
+						z-index: 3
+						+fs(36)
+						font-family: nSpm
+						font-weight: normal
+						color: #fff
+						max-width: 100%
+						left: 30px
+						&:hover
+							color: $link-hover-color
+							text-decoration: none
+				.body
+					position: absolute
+					bottom: 0
+					left: 0
+					right: 0
+					background: url("../images/h-f-bg.png") repeat left top rgba(0, 0, 0, 0)
+					padding: 20px
+					overflow: hidden
+			.views-field-nothing-1
+				.bx-wrapper
+					height: 495px
+					width: 100%
+					margin: 0px
+					border: 0px
+					left: 0
+					background: #000
+					box-shadow: none
+					.bx-viewport
+						margin: 0px
+						border: 0px
+						left: 0
+						background: #000
+						box-shadow: none
+					.bx-pager
+						position: absolute
+						bottom: 10px
+			
+		.views-row.vertical.animab
+			.foto-zona
+				float: left
+				position: relative
+				overflow: hidden
+				img
+					max-width: 380px
+					width: 380px
+					height: 495px
+					margin-left: 0px
+				.black-image
+					opacity: 1
+					position: absolute
+					top: 0
+					left: 0
+					-webkit-transition: opacity 1s ease
+					-moz-transition: opacity 1s ease
+					-o-transition: opacity 1s ease
+					-ms-transition: opacity 1s ease
+					transition: opacity 1s ease
+				.original-image
+					opacity: 0
+					-webkit-transition: opacity 1s ease
+					-moz-transition: opacity 1s ease
+					-o-transition: opacity 1s ease
+					-ms-transition: opacity 1s ease
+					transition: opacity 1s ease
+					opacity: 0
+		.views-row.vertical.animab:hover
+			.foto-zona
+				img
+					margin-left: 0px
+				.black-image
+					opacity: 0
+				.original-image
+					opacity: 1
+				
+			
+		.views-row.vertical.title-left-down
+			.title
+				a
+					bottom: 80px
+					top auto
+					left: 30px
+					text-align: left
+			.body
+				display: none
+		.views-row.vertical.title-right-down
+			.title
+				a
+					bottom: 80px
+					top auto
+					right: 20px
+					left: 30px
+					text-align: right
+			.body
+				display: none
+		.views-row.vertical.title-left-up
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+			.title
+				a
+					top: 20px
+					right: 20px
+					top auto
+					left: 30px
+					text-align: left
+			.body
+				display: block
+		.views-row.vertical.title-right-up
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+			.title
+				a
+					text-align: right
+					top: 20px
+					right: 20px
+					top auto
+					left: 30px
+			.body
+				display: block
+		
+		.views-row.vertical.title-center
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+			.title
+				display: table
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 495px
+				a
+					top: 0px
+					right: 0px
+					left: 0
+					bottom: 0px
+					position: relative
+					text-align: center
+					padding: 20px
+					height: 495px
+					width: 408px
+					max-width: 100%
+					display: table-cell
+					vertical-align: middle
+			.body
+				display: none
+		
+				
+		.views-row.horizontal.fototwo
+			.views-field-field-add-video-computer,
+			.views-field-field-video-sta
+				display: none
+			.views-field-nothing
+				display: none
+			.foto-zona
+				width: 100%
+				float: left
+				position: relative
+				display: block
+				height: 240px
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					z-index: 4
+					+s(foto-ico)
+					top: 50%
+					left: 50%
+					margin: -35.5px 0 0 -35.5px
+					
+				.black-image
+					width: 100%
+					img
+						position: absolute
+						margin-left: 0px
+						height: 240px
+						width: 50%//204px
+						max-width: 50%
+					>a:first-child
+						img
+							left: 0px
+							top: 0px
+							float: left
+							display: block
+						
+					>a:last-child
+						img
+							left: 50%//204px
+							top: 0px
+							float: left
+							display: block
+				.original-image
+					img
+						margin-left: 0px
+						position: absolute
+					>a:first-child
+						img
+							left: 0px
+							top: 0px
+							float: left
+							display: block
+							width: 50%
+							overflow: hidden
+					>a:last-child
+						img
+							right: 0px
+							top: 0px
+							float: left
+							display: block
+							width: 50%
+						
+						
+		.views-row.horizontal.fototwo:hover
+			.foto-zona
+				.black-image
+					img
+						margin-left: 0px
+					
+					>a:first-child
+						img
+							float: left
+							display: block
+					>a:last-child
+						img
+							float: left
+							display: block
+
+				.original-image
+					img
+				
+						margin-left: 0px
+						//width: 204px
+					>a:first-child
+						img
+							float: left
+							display: block
+					>a:last-child
+						img
+							float: left
+							display: block
+							
+
+.view-content
+	.views-row.horizontal.image-right
+		.foto-zona
+			position: relative
+			&:before
+				content: ''
+				display: inline-block
+				+s(rwa)
+				margin-left: 0px
+				margin-right: 0px
+				position: absolute
+				top: 25px
+				left: 5px
+				z-index: 10
+.view-content
+	.views-row.horizontal.image-left
+		.foto-zona
+			position: relative
+			&:before
+				content: ''
+				display: inline-block
+				+s(lwa)
+				margin-left: 0px
+				margin-right: 0px
+				position: absolute
+				top: 25px
+				right: 5px
+				z-index: 10
+
+@media only screen and (max-width : 480px)
+	.mosaik-preview
+		>.view-content
+			max-width: 100%
+			>.views-row
+				float: none
+				max-width: 100%
+				width: 408px
+				height: 240px
+				background: #000000
+				border: 0px solid #000
+				margin: 0 auto 15px
+				overflow: hidden
+			>.views-row.vertical
+				height: 495px
+				background: #000
+				margin: 0 0 15px
+				position: relative
+				overflow: hidden
+				img
+					max-width: 408px!important
+	.mosaik-preview-inslide
+		>.view-content
+			max-width: 100%
+			>.views-row
+				float: none
+				max-width: 100%
+				width: 380px
+				height: 240px
+				background: #000000
+				border: 0px solid #fff
+				margin: 0 auto 15px
+				overflow: hidden
+			>.views-row.vertical
+				height: 495px
+				background: #fff
+				margin: 0 0 15px
+				position: relative
+				img
+					max-width: 380px!important
+
+.quicktabs-wrapper
+	.quicktabs_main
+		overflow: hidden
+		position: relative
+		.quicktabs-tabpage
+			opacity: 1
+			position: relative
+			width: 100%
+		.quicktabs-tabpage.quicktabs-hide
+			display: block
+			left: -9999px
+			opacity: 0
+			position: absolute
+			width: 100%
+
+
+//ADV slider-titles
+.vda
+	.view-items-slider
+		.bx-viewport
+			.views-row
+				position: relative
+				.views-field-field-title-slider
+					position: absolute
+					z-index: 3
+					right: 20px
+					left: 30px
+					a
+						+fs(36)
+						font-family: nSpm
+						font-weight: normal
+						color: #fff
+						max-width: 100%
+						&:hover
+							color: $link-hover-color
+							text-decoration: none
+							
+			.views-row.color-title-black
+				.views-field-field-title-slider
+					a
+						color: #000
+						
+			.views-row.title-left-down
+				.views-field-field-title-slider
+					bottom: 80px
+					top auto
+					left: 30px
+						
+			.views-row.title-right-down
+				.views-field-field-title-slider
+					bottom: 80px
+					top auto
+					right: 20px
+					text-align: right
+						
+				
+			.views-row.title-right-up
+				.views-field-field-title-slider
+					top: 20px
+					right: 20px
+					left: 30px
+					text-align: right
+			.views-row.title-left-up
+				.views-field-field-title-slider
+					top: 20px
+					right: 20px
+					left: 30px
+					text-align: left
+		
+		
+//page video
+.view-video
+	.view-header
+		+fs(16)
+	.view-content
+		.thumbnail
+			.views-field-title
+				a 
+					+fs(16)
+					font-weight: 300
+					color: #2A2A2A
+
+//page-foto
+.fotogallary-p
+	.view-content
+		.thumbnail
+			.views-field-title
+				a 
+					+fs(16)
+					font-weight: 600
+					color: #2A2A2A
+			.views-field-body
+				+fs(16)
+				color: #2A2A2A
+				
+
+.mosaik-preview-inslide > .view-content .views-row.horizontal.color-title-black .views-field-nothing .tittle-zona .title a ,
+.mosaik-preview > .view-content .views-row.horizontal.color-title-black .views-field-nothing .tittle-zona .title a ,
+.color-title-black
+	.tittle-zona
+		.title
+			a
+				color: #000!important
+				&:hover
+					text-decoration: none
+					color: #B51111!important
+.mosaik-preview-inslide > .view-content .views-row.horizontal .views-field-field-add-video-computer,
+.mosaik-preview > .view-content .views-row.horizontal .views-field-field-add-video-computer			
+	.media-colorbox
+		position: relative
+		overflow: hidden
+		display: block
+		video
+			width: 100%
+			max-height: 240px
+			height: 240px
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			margin: -58.5px 0 0 -58.5px
+			display: block
+			+s(vid-ico)
+			z-index: 5
+	.media-colorbox:hover
+		&:before
+			content: ''
+			opacity: 0.7	

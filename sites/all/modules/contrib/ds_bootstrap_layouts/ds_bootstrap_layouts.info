@@ -1,0 +1,5 @@
+name = Display Suite Bootstrap Layouts
+description = Implementation of fantastic Twitter Bootstrap scaffolding in Display Suite
+package = "Display Suite"
+core = 7.x
+dependencies[] = ds

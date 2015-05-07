@@ -1,0 +1,84 @@
+.menu.nav
+	margin-top: 15px
+	clear: both
+	width: 100%
+	
+	>li,
+	>li.open
+		>a,
+		>span
+			+fs(16)
+			font-family: $font-family-ptsans
+			font-weight: 400
+			height: 60px
+			display: inline-block
+			padding: 5px 0 0 0
+			border-bottom: 10px solid transparent
+			background-color: transparent
+			margin: 0 20px
+			color: $head-foot-color
+			&:hover,
+			&:focus,
+				color: $active-color-menu
+				border-color: $active-color-menu
+			.caret
+				+bs('menu-arr.png')
+				clear: both
+				display: block
+				margin: 5px auto 0
+				border: 0px
+		>.dropdown-menu
+			background: #000 url("../images/h-f-bg.png") repeat left top 
+			border: none
+			border-radius: 0px
+			border-bottom: 10px solid $active-color-menu
+			li
+				a
+					color: $head-foot-color
+				a.active
+					color: $active-color-menu
+					background: transparent
+	>li.active
+		>span.active,
+		>span:hover,
+		>span:focus,
+		>a.active,
+		>a:hover,
+		>a:focus
+			background-color: transparent
+			color: $active-color-menu
+			border-color: $active-color-menu
+	>li:last-child
+		>a
+			margin-right: 0px
+	>li:first-child
+		>a
+			margin-left: 0px
+	>li:hover
+		.dropdown-menu
+			border-radius: 0 0 0 0
+			display: block
+			a:hover
+				color: $active-color-menu
+				
+	>.expanded.dropdown,
+	>.expanded.dropdown:hover,
+		>span.active,
+		>span:hover,
+		>span:focus,
+		>a.active,
+		>a:hover,
+		>a:focus
+			background-color: transparent
+			color: $active-color-menu
+			border-color: transparent
+			
+			
+
+@media only screen and (max-width : 1024px)		
+	.menu.nav > li > a
+		margin: 0 2px
+
+@media only screen and (max-width : 768px)
+	.menu.nav > li:first-child > a
+		margin-left: 20px

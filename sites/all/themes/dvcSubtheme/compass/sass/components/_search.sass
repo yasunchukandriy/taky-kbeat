@@ -1,0 +1,36 @@
+.search-bl,
+.header-search
+	float: left
+	margin-top: 30px
+	.input-group
+		position: relative
+		.form-control
+			max-width: 280px
+			width: 280px
+			border-radius: 0px
+			background-color: $search-input-bg
+			border: 1px solid $search-input-bg
+			height: 31px
+			padding-right: 25px
+			font-weight: 400
+			font-family: $font-family-ptsans
+		.input-group-btn
+			width: 0px
+			.btn
+				background-color: rgba(0, 0, 0, 0)
+				border: none
+				text-indent: -9999px
+				overflow: hidden
+				position: absolute
+				top: 7px
+				right: 7px
+				z-index: 2
+				+s(search-ico)
+				&:focus,
+				&:hover,
+				&:active
+					outline: none
+					background-color: transparent
+					
+			
+			

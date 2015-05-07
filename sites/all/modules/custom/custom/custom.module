@@ -1,0 +1,12 @@
+<?php
+
+/**
+ *  @file
+ *  Provide main module for custom functionality.
+ */
+
+  module_load_include('inc', 'custom','custom.pages');
+  module_load_include('inc', 'custom','custom.form');
+  module_load_include('inc', 'custom','custom');
+  module_load_include('inc', 'custom','custom.block');
+

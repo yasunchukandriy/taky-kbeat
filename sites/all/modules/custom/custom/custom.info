@@ -1,0 +1,6 @@
+; $Id$
+name = Custom site functionality
+description = It is a module for add custom functionality on site
+package = Custom
+version = 1.0
+core = 7.x

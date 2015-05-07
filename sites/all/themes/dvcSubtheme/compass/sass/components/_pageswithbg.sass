@@ -1,0 +1,202 @@
+.region-content
+	clear: both
+.region-help
+	width: 0px
+	height: 0px
+	border: none
+	padding: 0px
+	margin: 0px
+	.glyphicon
+		display: none
+
+
+// page-h1 shadowline
+.page-video,
+.page-foto,
+.page-foto-all,
+.page-video-all
+	h1
+		position: relative
+		padding-bottom: 50px
+		&:after 
+			content: ''
+			display: block
+			+bs('long-shadow.png')
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			margin: 0 auto
+			width: 98%
+			background-position: bottom center
+			max-width: 1160px
+
+
+//transparent bg
+.page-news-all,
+.page-tehnics-all,
+.page-traumas-all,
+.page-culture-all,
+.page-diet-all,
+.page-eqiupment-all,
+.page-interview-all
+	.content-wrapper-bg-opacity
+		.content-wrapper-bg
+			.page-header
+				@extend h1
+				clear: both
+				color: #fff
+				font-family: nSpr
+				font-weight: 400
+			#block-custom-follow-us
+				position: absolute
+				right: 10px
+				top: 7px
+				
+			.print_html
+				.print-page
+					display: none
+			
+
+@media only screen and (max-width : 480px)
+	.page-news-all,
+	.page-tehnics-all,
+	.page-traumas-all,
+	.page-culture-all,
+	.page-diet-all,
+	.page-eqiupment-all,
+	.page-interview-all
+		.content-wrapper-bg-opacity
+			.content-wrapper-bg
+				#block-custom-follow-us
+					position: inherit
+					top: 0
+					right: 0
+					margin: 5px auto
+					clear: both
+			
+// styletype1		
+.bez-fona
+	.thumbnail
+		background-color: transparent
+		border-radius: 0
+		border: none
+		color: $text-color-dark10
+		+fs(14)
+		font-weight: 300
+		.views-field-field-foto
+			width: 100%
+			margin-bottom: 10px
+		.views-field-title
+			a
+				+fs(14)
+				font-weight: 300
+				color:  $text-color-dark10
+
+
+// style type2
+.small-white
+	.col-md-1
+		min-width: 132px 
+	.thumbnail
+		background-color: transparent
+		border-radius: 0
+		border: none
+		color: $text-color-dark10
+		+fs(14)
+		font-weight: 300
+		width: 102px
+		text-align: center
+		.views-field-field-camp-image
+			width: 100%
+			text-align: center
+			margin-bottom: 15px
+		.views-field-name
+			a
+				+fs(16)
+				text-transform: uppercase
+				color: $prosto-grey-color
+				text-decoration: underline
+				&:hover
+					text-decoration: none
+					color: $h1-title-color
+.page-video-all,
+.page-video
+	.view-video
+		.views-field-field-video-with-computer,
+		.views-field-field-col-video
+			position: relative
+			a:before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				margin: -58.5px 0 0 -58.5px
+				display: block
+				+s(vid-ico)
+				z-index: 5
+			&:hover
+				a:before
+					opacity: 0.6
+					
+		.views-field-field-video-with-computer
+			overflow: hidden
+			video
+				width: 100%
+				max-height: 184px
+				
+				
+				
+.view-camps-blocks
+	.views-field-field-video-with-computer			
+		position: relative
+		overflow: hidden
+		video
+			max-height: 184px
+		a:before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			margin: -58.5px 0 0 -58.5px
+			display: block
+			+s(vid-ico)
+			z-index: 5
+		&:hover
+			a:before
+				opacity: 0.6
+
+
+@media only screen and (min-width : 769px)
+	.page-video-all,
+	.page-video
+		.view-video
+			.views-field-field-video-with-computer
+				overflow: hidden
+				video
+					background: #000
+					width: 100%
+					height: auto
+	.view-camps-blocks
+		.views-field-field-video-with-computer
+			overflow: hidden
+			video
+				background: #000
+				width: 100%
+				height: auto
+				
+@media only screen and (min-width : 1200px)
+	.page-video-all,
+	.page-video
+		.view-video
+			.views-field-field-video-with-computer
+				video
+					background: #000
+					width: 100%
+					height: 184px
+	.view-camps-blocks
+		.views-field-field-video-with-computer
+			video
+				background: #000
+				width: 100%
+				height: 184px

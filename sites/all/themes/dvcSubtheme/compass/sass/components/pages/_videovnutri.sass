@@ -1,0 +1,212 @@
+.field-name-field-video.field-type-field-collection
+	.view-field-collection-view
+		.views-slideshow-pager-fields
+			float: right
+			width: 484px
+		.views-field-field-video-with-computer
+			video
+				width: 100%
+				max-width: 690px
+				height: 448px
+				background: #000
+.node.node-video	
+	.field-name-left-slider
+		float: left
+		width: 41%
+		max-width: 480px
+		padding: 45px 0
+		.view-video-gallery
+			.view-content
+				.views-row
+					height: 146.5px
+					overflow: hidden
+					clear: both
+					margin: 0 0 5px 0
+					.views-field-field-col-video,
+					.views-field-field-video-with-computer
+						float: left
+						margin-right: 10px
+						video
+							background: #000
+							width: 100%
+					.views-field-field-video-with-computer
+						max-width: 207px
+						overflow: hidden
+					.views-field-field-title-video
+						width:  calc(100% - 217px)
+						min-width: 260px
+						float: left
+						color: #101010
+						max-height: 148px
+						overflow: hidden
+						font-family: $font-family-base
+						.title-vid
+							clear: both
+							line-height: 1.2
+							max-height: 46px
+							font-weight: 600//400
+							margin: 0 0 10px 0
+							float: left
+							overflow: hidden
+							width: 100%
+						.description-vid
+							float: left
+							font-weight: 300
+							max-height: 65px
+							overflow: hidden
+							line-height: 1.2
+	.field-name-field-video
+		float: left
+		width: 59%
+		margin: 45px auto
+		>.field-items
+			>.field-item
+				>.view-field-collection-view
+					>.view-content
+						position: relative
+						>.views-row
+							display: none
+							position: absolute
+						.views-row.active,
+						.item1.active
+							display: block
+							position: relative
+	.field-name-description-text-video
+		margin: 25px 0 5px
+		display: inline-block
+		width: 100%
+		clear: both
+		color: #101010
+		.view-content
+			.views-row
+				display: none
+			.views-row.active,
+			.item1.active
+				display: block
+	.field-name-tags
+		position: relative
+		padding: 0 0px 30px
+		margin-bottom: 10px
+		&:after
+			content: ""
+			display: block
+			background-image: url('../images/long-shadow.png')
+			background-position: 0 0
+			background-repeat: no-repeat
+			background-color: rgba(0, 0, 0, 0)
+			height: 14px
+			width: 1178px
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			margin: 0 auto
+			width: 98%
+			background-position: top center
+			max-width: 1160px
+		
+		.view-content
+			.views-row
+				//margin: 40px 20px
+			
+	.bx-wrapper
+		.bx-viewport
+			border: 0px
+			box-shadow: none
+			background: transparent
+			left: 0px
+		.bx-controls-direction
+			a
+				position: absolute
+				left: 50%
+				margin-left: -27.5px
+				
+		.bx-prev
+			+s(slidertopar)
+			display: block
+			text-indent: -9999px
+			top: -20px
+		.bx-next
+			top: 470px
+			+s(sliderbottomar)
+			display: block
+			text-indent: -9999px
+			right: auto
+			
+			
+.node-type-video
+	.print_html
+		.print-page
+			position: absolute
+			top: -123px
+			right: 40px
+			
+	.field-name-post-date-video
+		color: #9a9a9a
+		+fs(16)
+		padding: 0 0px 30px
+		margin-bottom: 10px
+		display: block
+		float: left
+		width: 100%
+		position: relative
+
+	.field-name-post-date-video:after
+		content: ""
+		display: block
+		background-image: url('../images/long-shadow.png')
+		background-position: 0 0
+		background-repeat: no-repeat
+		background-color: transparent
+		height: 13px
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		margin: 0 auto
+		width: 98%
+		background-position: top center
+		max-width: 1160px
+		visibility: visible
+
+	.field-name-post-date-video
+		.field-label
+			font-weight: 300
+			color: #9a9a9a
+			
+	.links.list-inline
+		height: 0px
+		margin: 0px
+
+//	
+@media only screen and (max-width : 1250px)
+	.node.node-video
+		.field-name-field-video
+			text-align: center
+			img
+				height: auto
+		.field-name-field-video,
+		.field-name-left-slider
+			width: 100%
+			clear: both
+			max-width: 100%
+			float: none
+			margin-left: auto
+			margin-right: auto
+	
+	
+@media only screen and (max-width : 768px)
+	.field-name-field-video.field-type-field-collection
+		.view-field-collection-view
+			.views-field-field-video-with-computer
+				max-width: 207px
+				overflow: hidden
+				video
+					width: 100%
+					max-width: 690px
+					height: auto
+					background: transparent
+	
+	
+	
+	

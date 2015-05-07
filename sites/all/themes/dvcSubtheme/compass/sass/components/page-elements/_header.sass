@@ -1,0 +1,81 @@
+header.navbar
+	margin-top: 45px
+	margin-bottom: 30px
+	color: $head-foot-color
+	.logo
+		padding: 43px 20px 43px 0
+	.navbar-collapse
+		float: left
+		//width: calc(100% - 330px)
+	
+	.header-text
+		float: right
+		margin-top: 30px
+		
+		.block-content
+			+fs(30)
+			line-height: 1
+			margin-bottom: 0px
+			color: #fff
+			font-family: nSpm
+			
+@media all and (max-width: 768px)
+	header.navbar
+		.navbar-collapse
+			float: left
+			width: 100%!important
+			
+		.logo		
+			max-width: 75%
+			padding: 0px		
+			
+		.navbar-toggle	
+			margin-right: 0px
+			margin-left: 20px
+//@media all and (min-width: 1190px)			
+@media (min-width: 768px)
+	.container > .navbar-header 
+		margin-right: 0
+		margin-left: 0
+		padding: 0px
+		.logo
+			width: 100%
+	header.navbar
+		.navbar-collapse
+			width: 75%
+			margin-right: 0
+			margin-left: 0
+			padding: 0px
+			float: left
+	.navbar-nav > li 
+		display: table-cell
+		float: none
+	.navbar-nav > li.last.leaf
+		text-align: right
+	.navbar-nav 
+		float: left
+		margin: 0
+		width: 100%
+		display: table
+	
+// menu as button
+header
+	.menu.nav
+		>li,
+		>li.active
+			>a.forum-btn,
+			>a.forum-btn.active
+				border: none
+				border-radius: 0px
+				background-color: $button-bg-deff
+				height: 36px
+				padding: 5px 10px
+				text-align: center
+				line-height: initial
+				+fs(16)
+				color: $button-color-deff
+				&:hover,
+				&:focus
+					color: $button-color-deff
+					background-color: $button-bg-deffhover
+				

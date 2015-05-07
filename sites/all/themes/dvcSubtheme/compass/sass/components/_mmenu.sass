@@ -1,0 +1,35 @@
+.footer-m-menu
+	clear: both
+	width: 100%
+	.block-content
+		ul.nav
+			>li
+				display: block
+				float: left
+				>.dropdown-menu
+					margin-top: 0px
+				>a
+					margin: 0 15px
+					color: $head-foot-color
+					&:hover,
+					&:focus
+						color: $active-color-menu
+			>li:first-child
+				>a
+					margin-left: 0px
+			>li:last-child
+				>a
+					margin-right: 0px
+					
+					
+@media only screen and (max-width : 768px)
+	.footer-m-menu
+		ul.nav
+			>li
+				width: 100%
+				clear: both
+				margin: 3px 0
+				>a,
+				>span
+					margin: 0px
+					width: 100%
