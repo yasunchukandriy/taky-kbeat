@@ -7,6 +7,7 @@ base theme = bootstrap
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Regions
 ;;;;;;;;;;;;;;;;;;;;;
+
 regions[prenavigation]     = 'preNavigation'
 regions[navigation]     = 'Navigation'
 regions[header]         = 'Top Bar'
@@ -27,9 +28,6 @@ regions[page_bottom]    = 'Page bottom'
 ;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = compass/stylesheets/styles.css
-stylesheets[all][] = compass/stylesheets/extra.css
-stylesheets[all][] = compass/stylesheets/jquery.bxslider.css
-
 
 
 ; For information on choosing the desired method, please read the Drupal
@@ -56,9 +54,6 @@ scripts[] = 'compass/js/bootstrap/popover.js'
 scripts[] = 'compass/js/bootstrap/scrollspy.js'
 scripts[] = 'compass/js/bootstrap/tab.js'
 scripts[] = 'compass/js/bootstrap/transition.js'
-scripts[] = 'compass/js/isotope.pkgd.min.js'
-scripts[] = 'compass/js/jquery.bxslider.min.js'
-scripts[] = 'compass/js/custom-js.js'
 ;
 ; ; Disable BootstrapCDN if using Bootstrap source files in your sub-theme.
 ; settings[bootstrap_cdn] = ''

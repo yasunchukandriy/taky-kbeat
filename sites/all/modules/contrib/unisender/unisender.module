@@ -1,0 +1,342 @@
+<?php
+/**
+ * @file
+ * Unisender Integration
+ */
+
+/**
+ * hook_menu()
+ */
+function unisender_menu()
+{
+    $apiKey = variable_get('unisender_apikey');
+    $items = array(
+        'admin/config/services/unisender' => array(
+            'title'             => 'Unisender Integration',
+            'description'       => 'Configuration for Unisender module',
+            'page callback'     => 'drupal_get_form',
+            'page arguments'    => array('unisender_config_connection'),
+            'access arguments'  => array('access administration pages'),
+            'type'              => MENU_NORMAL_ITEM,
+            'file'              => 'unisender.admin.inc',
+        ),
+        // Common config page
+        'admin/config/services/unisender/unisender' => array(
+            'title'             => 'Connection',
+            'description'       => 'Connection Settings',
+            'access arguments'  => array('administer users'),
+            'page arguments'    => array('unisender_config_connection'),
+            'type'              => MENU_DEFAULT_LOCAL_TASK,
+            'weight'            => -10,
+            'file'              => 'unisender.admin.inc',
+        ),
+        // Form config page
+        'admin/config/services/unisender/form' => array(
+            'title'             => 'Form',
+            'description'       => 'Form Settings',
+            'page callback'     => 'drupal_get_form',
+            'page arguments'    => array('unisender_config_form'),
+            'access arguments'  => array('administer permissions'),
+            'type'              => MENU_LOCAL_TASK,
+            'file'              => 'unisender.admin.inc',
+        ),
+        // Form config page
+        'admin/config/services/unisender/registration' => array(
+            'title'             => 'Registration',
+            'description'       => 'Registration Settings',
+            'page callback'     => 'drupal_get_form',
+            'page arguments'    => array('unisender_config_registration'),
+            'access arguments'  => array('administer permissions'),
+            'type'              => MENU_LOCAL_TASK,
+            'file'              => 'unisender.admin.inc',
+        ),
+        // Ajax subscribe form handler
+        'unisender_ajax' => array(
+            'delivery callback' => 'ajax_deliver',
+            'page callback'     => 'unisender_ajax_callback',
+            'access callback'   => true,
+            'type'              => MENU_CALLBACK,
+            'theme callback'    => 'ajax_base_page_theme',
+        ),
+    );
+    return $items;
+}
+
+/**
+ * hook_help()
+ */
+function unisender_help($path, $arg)
+{
+    switch ($path) {
+        case "admin/help#unisender":
+            return '<p>' . t("Integration with mail and sms subscription system Unisender") . '</p>';
+            break;
+    }
+}
+
+/**
+ * hook_block_info()
+ */
+function unisender_block_info()
+{
+    $blocks['unisender_subscribe_form'] = array(
+        'info' => t('Unisender Subscribe'),
+        'cache' => DRUPAL_CACHE_PER_ROLE,
+    );
+
+    return $blocks;
+}
+
+/**
+ * hook_block_view()
+ */
+function unisender_block_view($delta = '')
+{
+    $block = null;
+    switch($delta){
+        case 'unisender_subscribe_form':
+            //check access and permissions
+            if (!user_access('access content')) { //TODO проверка на вывод формы
+                return false;
+            }
+            $apiKey = variable_get('unisender_apikey', null);
+            if (!$apiKey) {
+                return false;
+            }
+            $defaultListId = variable_get('unisender_default_list');
+            if (!$defaultListId) {
+                return false;
+            }
+            $isFormEnabled = variable_get('unisender_form_general_enabled', false);
+            if (!$isFormEnabled) {
+                return false;
+            }
+
+            drupal_add_css(unisender_getModuleUrl() . 'css/unisender.css');
+            drupal_add_js('misc/jquery.form.js');
+
+            $form = drupal_get_form('unisender_subscribe_form');
+            $form = drupal_render($form);
+            $block = array(
+                'subject' => variable_get('unisender_form_display_title', t('Subscribe')),
+                'content' => theme(
+                    'container',
+                    array(
+                        'element' => array(
+                            '#children'     => $form,
+                            '#id'           => 'unisender_subscribe_form',
+                            '#attributes'   => array('class' => array('container')),
+                        ),
+                    )
+                ),
+            );
+            break;
+    }
+    return $block;
+}
+
+/**
+ * Return array of subscription form for render
+ *
+ * @return array
+ */
+function unisender_subscribe_form()
+{
+    $form = array();
+    $required = variable_get('unisender_form_display_required_field', 'email');
+    $showCaption = variable_get('unisender_form_display_caption', 'placeholder');
+    $fields = variable_get('unisender_form_general_fields');
+
+    if (is_string($fields['email'])) {
+        $form['email'] = array(
+            '#type'	        => 'textfield',
+            '#title'        => t('E-mail'),
+            '#size'         => null,
+            '#attributes'   => array(
+                'placeholder'   => t('E-mail'),
+                'class'         => array('unisender_input')
+            ),
+            '#required'     => ($required == 'phone') ? false : true,
+        );
+    }
+
+    if (is_string($fields['phone'])) {
+        $form['phone'] = array(
+            '#type'	        => 'textfield',
+            '#title'        => t('Phone'),
+            '#size'         => null,
+            '#attributes'   => array(
+                'placeholder'   => t('Phone'),
+                'class'         => array('unisender_input')
+            ),
+            '#required'     => ($required == 'email') ? false : true,
+        );
+    }
+
+    if (is_string($fields['name'])) {
+        $form['name'] = array(
+            '#type'	        => 'textfield',
+            '#title'        => t('Name'),
+            '#size'         => null,
+            '#attributes'   => array(
+                'placeholder'   => t('Name'),
+                'class'         => array('unisender_input')
+            ),
+        );
+    }
+
+    $form['submit'] = array(
+        '#type'         => 'submit',
+        '#value'        => t('Subscribe'),
+        '#attributes'   => array(
+            'class'         => array('unisender_input', 'use-ajax-submit'),
+        ),
+        '#ajax'         => array(
+            'path'          => 'unisender_ajax',
+            'wrapper'       => 'unisender_subscribe_form',
+            'method'        => 'replace',
+            'effect'        => 'fade',
+            'validate_first'=> true,
+        ),
+    );
+
+    foreach ($form as $name => $field) {
+        if ($showCaption == 'label') {
+            unset($form[$name]['#attributes']['placeholder']);
+        } elseif ($showCaption == 'placeholder') {
+            unset($form[$name]['#title']);
+        }
+    }
+
+    return $form;
+}
+
+/**
+ * Validate subscription form
+ *
+ * @param $form
+ * @param $form_state
+ */
+function unisender_subscribe_form_validate($form, &$form_state)
+{
+    $listId = variable_get('unisender_form_general_list', variable_get('unisender_default_list'));
+    if ($listId == 0 ) {
+        $listId = variable_get('unisender_default_list');
+    }
+
+    if (empty($listId) || $listId == 0) {
+        drupal_set_message(t('Subscribe form is not ready. Try again later'), 'warning');
+    }
+}
+
+/**
+ * Submit subscription form and subscribe user in Unisender
+ *
+ * @param $form
+ * @param $form_state
+ * @return mixed
+ */
+function unisender_subscribe_form_submit($form, &$form_state)
+{
+    switch ($form_state['values']['form_id'])
+    {
+        case 'unisender_subscribe_form':
+            $api = UnisenderApi::getInstance();
+            $listId = variable_get('unisender_form_general_list', 0);
+            if ($listId == 0 ) {
+                $listId = variable_get('unisender_default_list');
+            }
+            $response = $api->subscribe($form_state['values'], $listId);
+            if (!empty($response['error'])) {
+                form_set_error("email", $response['error']);
+            } else {
+                drupal_set_message('Subscribe success');
+            }
+            break;
+    }
+    return $form;
+}
+
+/**
+ * ajax_callback
+ */
+function unisender_ajax_callback()
+{
+    list($form, $form_state) = ajax_get_form();
+    drupal_process_form($form['#form_id'], $form, $form_state);
+
+    $commands = array();
+    // Delete previous messages and set new
+    $commands[] = ajax_command_remove('#unisender_message');
+    $commands[] = ajax_command_before('#page-title', '<div id="unisender_message">' . theme('status_messages') . '</div>');
+
+    $errors = form_get_errors();
+    if (empty($errors)) {
+        $commands[] = ajax_command_invoke('#unisender-subscribe-form', 'trigger', array('reset'));
+    }
+
+    return array('#type' => 'ajax', '#commands' => $commands);
+}
+
+/**
+ * Add checkbox for subscribe on registration page
+ *
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ */
+function unisender_form_user_register_form_alter(&$form, &$form_state, $form_id)
+{
+    $registerIsEnabled = variable_get('unisender_registration_enabled', false);
+    $checkboxIsEnabled = variable_get('unisender_registration_hide_checkbox', false);
+    // Is subs on reg is off
+    if ($registerIsEnabled == false) {
+        return;
+    }
+    // If checkbox is off
+    if ($checkboxIsEnabled == true) {
+        $form['unisender_is_subscribe'] = array(
+            '#type' => 'checkbox', // галочка
+            '#title' => t('I agree for subscribe'),
+        );
+    }
+    // If !empty(register_form)
+    if (!empty($form_state['input'])) {
+        $isAgree = !empty($form_state['input']['unisender_is_subscribe'])
+            ? $form_state['input']['unisender_is_subscribe']
+            : null;
+        if ($checkboxIsEnabled == false || $checkboxIsEnabled == true && !empty($isAgree) ) {
+            $form_state['input']['email'] = $form_state['input']['mail'];
+            $api = UnisenderApi::getInstance();
+            $listId = variable_get('unisender_registration_list', 0);
+            if ($listId == 0 ) {
+                $listId = variable_get('unisender_default_list');
+            }
+            $api->subscribe($form_state['input'], $listId);
+        }
+
+    }
+}
+
+function unisender_getModuleUrl()
+{
+    return drupal_get_path('module', 'unisender') . '/';
+}
+
+function checkSettings()
+{
+    $apiKey = variable_get('unisender_apikey');
+    $defaultListId = variable_get('unisender_default_list');
+    if (empty($apiKey) || empty($defaultListId)) {
+        http_redirect('admin/config/services/unisender');
+    }
+}
+
+// Debug function
+function D($var, $exit = 0) {
+    print '<div style="background-color: #ffffff; padding: 3px; z-index: 5000;"><pre style="text-align: left; font: normal 11px Courier; color: #000000;">';
+    if ( is_array($var) || is_object($var) ) print_r($var);
+    else var_dump($var);
+    print '</pre></div>';
+    if ( $exit ) exit;
+}

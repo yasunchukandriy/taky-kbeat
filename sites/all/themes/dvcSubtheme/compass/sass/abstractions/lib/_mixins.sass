@@ -77,11 +77,6 @@ $breaklarge: 1180px
 	+transition-duration($time)
 	+transition-timing-function($type)
 
-=trll($what, $time: 0.4s, $type: ease-in-out)
-	+transition($what)
-	+transition-duration($time)
-	+transition-timing-function($type)
-
 =hide-text
 	font: 0/0 a
 	text-shadow: none
@@ -297,14 +292,3 @@ $breaklarge: 1180px
 		height: 0
 		clear: both
 		visibility: hidden
-		
-//asdfast font-family
-/*@mixin font($alias, $name) {*/
-/*  @font-face {*/
-/*    font-family: $alias;*/
-/*    src: url("fonts/" + $name + ".eot");*/
-/*    src: url("fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("fonts/" + $name + ".woff") format("woff"), url("fonts/" + $name + ".ttf") format("truetype");*/
-/*    font-weight: normal;*/
-/*    font-style: normal;*/
-/*  }*/
-/*}*/

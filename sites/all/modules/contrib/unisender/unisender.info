@@ -1,0 +1,6 @@
+name = Unisender Integration
+description = Create and send professional newsletters! The module integrates your store with UniSender, a popular service for mailing and bulk SMS messaging.
+package = web services
+core = 7.x
+version = 7.x-1.0
+files[]= unisender.api.class.php

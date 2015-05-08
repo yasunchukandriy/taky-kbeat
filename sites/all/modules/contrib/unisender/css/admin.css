@@ -1,0 +1,23 @@
+.unisender_fieldset {
+	max-width: 280px;
+	min-width: 200px;
+	float: left;
+	margin-right: 20px;
+}
+
+.clear {
+	clear: both;
+	height: 1px;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+input[type='text'] {
+	width: 90%;
+}
+
+fieldset.error {
+	border: 1px solid red !important;
+	color: black !important;
+}

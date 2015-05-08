@@ -27,27 +27,22 @@
 // Scaffolding
 // -------------------------
 
-$body-bg:               #0f0f0f;//#fff;
-$text-color:            #b1b1b1;//$gray-dark;
+//$body-bg:               #fff;
+//$text-color:            $gray-dark;
 
 // Links
 // -------------------------
 
-$link-color:            #c45b59;//$brand-primary;
-$link-hover-color:      #b51111;//darken($link-color, 15%);
+//$link-color:            $brand-primary;
+//$link-hover-color:      darken($link-color, 15%);
 
 // Typography
 // -------------------------
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600&subset=latin,cyrillic);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic);
-//@include font-face('neoSansPro', font-files('neosans/NeoSansPro.ttf'));//'neoSansPro', font-files('neosans/aparaj.woff', 'neosans/aparaj.eot', 'neosans/aparaj.ttf', 'neosans/aparaj.svg'));
 //$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 //$font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //$font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
-$font-family-base:        	'Open Sans', sans-serif;//$font-family-sans-serif;
-$font-family-ptsans:				'PT Sans', sans-serif;
-//$font-family-neosanspro:		'neoSansPro', sans-serif;//	
+//$font-family-base:        $font-family-sans-serif;
 
 //$font-size-base:          14px;
 //$font-size-large:         ceil($font-size-base * 1.25); // ~18px
@@ -242,7 +237,7 @@ $font-family-ptsans:				'PT Sans', sans-serif;
 // Number of columns in the grid system
 //$grid-columns:              12;
 // Padding, to be divided by two and applied to the left and right of all columns
-$grid-gutter-width:         30px;
+//$grid-gutter-width:         30px;
 // Point at which the navbar stops collapsing
 //$grid-float-breakpoint:     $screen-sm-min;
 
@@ -599,31 +594,13 @@ $grid-gutter-width:         30px;
 // --------------------------------------------------
 
 // Small screen / tablet
-$container-tablet:             ((720px + $grid-gutter-width));
-$container-sm:                 $container-tablet;
+//$container-tablet:             ((720px + $grid-gutter-width));
+//$container-sm:                 $container-tablet;
 
 // Medium screen / desktop
-$container-desktop:            ((940px + $grid-gutter-width));
-$container-md:                 $container-desktop;
+//$container-desktop:            ((940px + $grid-gutter-width));
+//$container-md:                 $container-desktop;
 
 // Large screen / wide desktop
-$container-large-desktop:      ((1250px + $grid-gutter-width));//1140px
-$container-lg:                 $container-large-desktop;
-
-
-
-// Custom vars
-// --------------------------------------------------
-$bg-wrapper-pages: #fcf5ef;
-$bg-wrapper-border: 8px solid rgba(168, 168, 168, 0.64);
-$prosto-white:							#ffffff;
-$prosto-grey-color:					#7d7d7d;
-$prosto-darkengrey-color: 	#373737;
-$h1-title-color:						#b51111;
-$button-bg-deffhover: 			#c45b59;
-$button-bg-deff: 						#b51111;
-$active-color-menu: 				#b51111;
-$search-input-bg:						rgba(255, 255, 255, 0.1);
-$head-foot-color:						#c2c2c2;
-$button-color-deff: 				#f6f6f6;
-$text-color-dark10:					#101010;
+//$container-large-desktop:      ((1140px + $grid-gutter-width));
+//$container-lg:                 $container-large-desktop;

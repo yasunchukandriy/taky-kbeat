@@ -1,0 +1,190 @@
+# $Id$
+#
+# Russian translation of Drupal (general)
+# Copyright YEAR NAME <r.kurshakov@videal.net>
+# Generated from files:
+#  unisender.api.class.php: n/a
+#  unisender.admin.inc: n/a
+#  unisender.module: n/a
+#  unisender.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-08-26 16:51+0300\n"
+"PO-Revision-Date: 2014-08-26 16:51+0300\n"
+"Last-Translator: NAME <r.kurshakov@videal.net>\n"
+"Language-Team: Russian <r.kurshakov@videal.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: unisender.api.class.php:50
+msgid "Default list"
+msgstr "Список по умолчанию"
+
+#: unisender.admin.inc:12
+msgid "Unisender API Key"
+msgstr "Unisender API ключ"
+
+#: unisender.admin.inc:15
+msgid "This key you can find on <a href=\"http://cp.unisender.com/ru/v5/user/info/api\" target=\"_blank\">Unisender account page</a>"
+msgstr "Данный ключ Вы можете найти на <a href=\"http://cp.unisender.com/ru/v5/user/info/api\" target=\"_blank\">странице настройки API Unisender</a>"
+
+#: unisender.admin.inc:24
+msgid "List used by default"
+msgstr "Список, используемый по умолчанию, если другие не определены"
+
+#: unisender.admin.inc:46
+msgid "This Key is incorrect or your API is disabled"
+msgstr "Данный API Ключ некорректен либо API вашего аккаунта отключено"
+
+#: unisender.admin.inc:50
+msgid "Default list is required"
+msgstr "Список по умолчанию обязателен"
+
+#: unisender.admin.inc:66
+msgid "GENERAL"
+msgstr "Общее"
+
+#: unisender.admin.inc:75
+msgid "Display the subscription form"
+msgstr "Отображать форму подписки на сайте"
+
+#: unisender.admin.inc:81
+msgid "List used with form"
+msgstr "Список, используемый при подписке через форму"
+
+#: unisender.admin.inc:88
+msgid "Form fields"
+msgstr "Поля формы"
+
+#: unisender.admin.inc:90 unisender.module:152;155
+msgid "E-mail"
+msgstr "E-mail"
+
+#: unisender.admin.inc:91 unisender.module:165;168
+msgid "Phone"
+msgstr "Телефон"
+
+#: unisender.admin.inc:92 unisender.module:178;181
+msgid "Name"
+msgstr "Имя"
+
+#: unisender.admin.inc:99
+msgid "DISPLAY"
+msgstr "Отображение"
+
+#: unisender.admin.inc:108
+msgid "Form Title"
+msgstr "Заглавие блока формы"
+
+#: unisender.admin.inc:109 unisender.module:120;189
+msgid "Subscribe"
+msgstr "Подписаться"
+
+#: unisender.admin.inc:114
+msgid "Required fields"
+msgstr "Обязательные поля"
+
+#: unisender.admin.inc:117;129
+msgid "Both"
+msgstr "Оба"
+
+#: unisender.admin.inc:118
+msgid "Only E-mail"
+msgstr "Только E-mail"
+
+#: unisender.admin.inc:119
+msgid "Only Phone"
+msgstr "Только телефон"
+
+#: unisender.admin.inc:126
+msgid "Enable labels or placeholders"
+msgstr "Отображать метку или заполнитель"
+
+#: unisender.admin.inc:130
+msgid "Only label"
+msgstr "Только метку"
+
+#: unisender.admin.inc:131
+msgid "Only placeholder"
+msgstr "Только заполнитель"
+
+#: unisender.admin.inc:155
+msgid "You can't disable both required fields"
+msgstr "Вы не можете отключить все обязательные поля"
+
+#: unisender.admin.inc:166
+msgid "You chosen required field and disable them"
+msgstr "Вы пытаетесь отключить поле, установленное обязательным"
+
+#: unisender.admin.inc:181
+msgid "Enable subscription on registration"
+msgstr "Включить подписку при регистрации"
+
+#: unisender.admin.inc:188
+msgid "Show checkbox about subscription"
+msgstr "Показывать флажок \"Я согласен подписаться на рассылку\""
+
+#: unisender.admin.inc:190
+msgid "If disabled, user will be subscribed automatically"
+msgstr "Если отключено, подписка при регистрации автоматическая"
+
+#: unisender.admin.inc:196
+msgid "List used with registration"
+msgstr "Список, используемый при регистрации"
+
+#: unisender.module:71
+msgid "Integration with mail and sms subscription system Unisender"
+msgstr "Интеграция с системой расслыки e-mail и sms Unisender"
+
+#: unisender.module:82
+msgid "Unisender Subscribe"
+msgstr "Подписка Unisender"
+
+#: unisender.module:227
+msgid "Subscribe form is not ready. Try again later"
+msgstr "Форма подписки еще не готова. Попробуйте позже"
+
+#: unisender.module:299
+msgid "I agree for subscribe"
+msgstr "Я согласен подписаться на рассылку"
+
+#: unisender.module:14 unisender.info:0
+msgid "Unisender Integration"
+msgstr ""
+
+#: unisender.module:15
+msgid "Configuration for Unisender module"
+msgstr "Настройка модуля Unisender"
+
+#: unisender.module:24
+msgid "Connection"
+msgstr "Соединение"
+
+#: unisender.module:25
+msgid "Connection Settings"
+msgstr "Настройка соединения"
+
+#: unisender.module:34
+msgid "Form"
+msgstr "Форма"
+
+#: unisender.module:35
+msgid "Form Settings"
+msgstr "Настройка формы"
+
+#: unisender.module:44
+msgid "Registration"
+msgstr "Регистрация"
+
+#: unisender.module:45
+msgid "Registration Settings"
+msgstr "Настройка регистрации"
+
+#: unisender.info:0
+msgid "Integration with Unisender - mail and sms subscription system."
+msgstr "Интеграция с Unisender - системой рассылки e-mail и sms."
