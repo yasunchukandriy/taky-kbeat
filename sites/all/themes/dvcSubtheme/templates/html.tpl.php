@@ -48,23 +48,10 @@
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces;?>>
 <head profile="<?php print $grddl_profile; ?>">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1, user-scalable=no">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
-    <style type="text/css">
-       @media print { 
-        .region-footer {
-         display: none !important;
-        }
-       }
-    </style>
-
-    <style type="text/css" media="print">
-      .region-footer {display:none !important}
-    </style>
-
-
   <!-- HTML5 element support for IE6-8 -->
   <!--[if lt IE 9]>  
     <script src="../javascripts/bootstrap/css3-mediaqueries.js"></script>

@@ -39,10 +39,14 @@
 // Typography
 // -------------------------
 
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=cyrillic,latin);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic&subset=cyrillic,latin);
+
 //$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-//$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+$font-family-serif:       	'PT Serif', serif;//Georgia, "Times New Roman", Times, serif;
 //$font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
-//$font-family-base:        $font-family-sans-serif;
+$font-family-base:        	'PT Sans Narrow', sans-serif;//$font-family-sans-serif;
+
 
 //$font-size-base:          14px;
 //$font-size-large:         ceil($font-size-base * 1.25); // ~18px
