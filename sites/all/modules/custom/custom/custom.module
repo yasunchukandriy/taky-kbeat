@@ -65,19 +65,30 @@ function _custom_get_link_threads() {
 
 	$list = '';
 	$allNumber = 0;
+	$isActive = FALSE;
 	foreach ($taxonomy as $key => $terms) {
 		$countNumber = taxonomy_menu_term_count_nodes($terms->tid, $vid->vid);
 		if ($countNumber > 0) {
+			$class = '';
 			$term = i18n_taxonomy_localize_terms($terms);
-			$path = '/' . $langcode . '/taxonomy/term/' . $terms->tid;
+			$path = '/' . $langcode . '/'. drupal_lookup_path('alias', 'taxonomy/term/'.$terms->tid, $langcode);
+			
 			$name = $term->name;
-			$list .= "<li><a href='$path'>$name<span>$countNumber</span></li>";
+			if ($path == '/' . $langcode . '/'. drupal_get_path_alias($_GET['q'])) {
+				$class = 'active';
+				$isActive = TRUE;
+			}
+			$list .= "<li><a href='$path' class='$class'>$name<span>$countNumber</span></li>";
 			$allNumber += $countNumber;
 		}
 	}
+	$class = '';
+	if (!$isActive) {
+		$class = 'active';
+	}
 	if (!empty($list)) {
 		$content  = '<ul class="threads-list">';
-		$content .= "<li><a href='/$langcode/taxonomy/term/all-temy'>". t('All replies') ."<span>$allNumber</span></li>";
+		$content .= "<li><a href='/$langcode/taxonomy/term/all-temy' class='$class'>". t('All replies') ."<span>$allNumber</span></li>";
 		$content .= $list;
 		$content .= '</ul>';
 	}
@@ -109,8 +120,6 @@ function custom_block_view_alter(&$data, $block) {
  */
 function _custom_popup_render() {
   $content = '';
-
-  // $content = '<div class="modal fade" id="checkoutModal" tabindex="-5" role="dialog">';
   $content .= '<div class="modal-dialog">';
   $content .= '<div class="modal-content">';
   $content .= '<div class="modal-header">';
@@ -125,6 +134,5 @@ function _custom_popup_render() {
   $content .= '</div>';
   $content .= '</div>';
   $content .= '</div>';
-  // $content .= '</div>';
   return $content;
 }
