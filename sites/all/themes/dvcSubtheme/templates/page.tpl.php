@@ -76,7 +76,7 @@
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
     
-      <div class="navbar-header col-sm-3">
+      <div class="navbar-header col-xs-3">
         
         <?php if ($logo): ?>
         <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -104,7 +104,7 @@
       
       
       <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-        <div class="navbar-collapse collapse col-sm-9">
+        <div class="navbar-collapse collapse col-xs-9">
           <nav role="navigation">
             <?php if (!empty($page['navigation'])): ?>
               <?php print render($page['navigation']); ?>
@@ -135,7 +135,7 @@
   <div class="row">
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
+      <aside class="col-xs-3" role="complementary">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
@@ -172,7 +172,7 @@
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
+      <aside class="col-xs-3" role="complementary">
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
@@ -181,11 +181,8 @@
 </div>
 <footer class="footer container-fluid">
   <div class="container">
-    <div class="col-sm-8">
+    <div class="col-xs-12">
       <?php print render($page['footer']); ?>
-    </div>
-    <div class="col-sm-4">
-      <?php print render($page['footer-r']); ?>
     </div>
   </div>
 </footer>

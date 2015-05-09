@@ -2,22 +2,44 @@
 footer.footer
 	border-top: 2px solid #020202
 	
-	.block-menu
-		.block-content
-			font-family: $font-family-base
-			+fs(16)
-			ul
-				li
-					a
-						color: #000000
-						text-decoration: underline
-						&:hover,
-						&:focus
-							color: #229a86
-							text-decoration: none
+.footer-m-menu
+	.block-content
+		font-family: $font-family-base
+		+fs(16)
+		ul
+			li
+				float: left
+				a
+					color: #000000
+					text-decoration: underline
+					&:hover,
+					&:focus
+						color: #229a86
+						text-decoration: none
 #block-block-2
 	+fs(16)
-		.block-content
-			+fs(16)
-			color: #000000
-			font-family: $font-family-base
+	.block-content
+		+fs(16)
+		color: #000000
+		font-family: $font-family-base
+#block-block-3,
+.social-block
+	.block-content
+		text-align: center
+		p
+			display: inline-block
+			mrgin: 0 auto
+		a
+			display: inline-block
+			margin: 2px 5px
+			text-indent: -9999px
+			overflow: hidden
+			
+		a.fb
+			+s(fb)
+		a.vk
+			+s(vk)
+		a.mail
+			+s(mail)
+		a.google
+			+s(google)
