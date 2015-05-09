@@ -11,6 +11,15 @@
   module_load_include('inc', 'custom','custom.block');
 
 /**
+ * Implements hook_menu_alter().
+ */
+function custom_menu_alter(&$items) {
+  $items ['node']['access callback'] = FALSE;
+  // $items ['search/node']['access callback'] = FALSE;
+  $items['search']['title'] = t('Search results');
+}
+
+/**
  * Implements hook_block_info().
  */
 function custom_block_info() {
@@ -135,4 +144,48 @@ function _custom_popup_render() {
   $content .= '</div>';
   $content .= '</div>';
   return $content;
+}
+
+/**
+ * Implements template_preprocess_search_result().
+ */
+function custom_preprocess_search_result(&$variables) {
+  global $language;
+
+  $result = $variables['result'];
+  $variables['url'] = check_url($result['link']);
+  $variables['title'] = check_plain($result['title']);
+  if (isset($result['language']) && $result['language'] != $language->language && $result['language'] != LANGUAGE_NONE) {
+    $variables['title_attributes_array']['xml:lang'] = $result['language'];
+    $variables['content_attributes_array']['xml:lang'] = $result['language'];
+  }
+  if (!empty($result['type'])) {
+  	$variables['type_section'] = $result['type'];
+  }
+
+  $info = array();
+  if (!empty($result['module'])) {
+    $info['module'] = check_plain($result['module']);
+  }
+  if (isset($result['extra']) && is_array($result['extra'])) {
+    $info = array_merge($info, $result['extra']);
+  }
+
+  $variables['snippet'] = isset($result['snippet']) ? $result['snippet'] : '';
+
+  $variables['info_split'] = $info;
+  $variables['info'] = implode(' - ', $info);
+  $variables['theme_hook_suggestions'][] = 'search_result__' . $variables['module'];
+}
+
+/**
+ * Implements hook_query_alter
+ */
+function custom_query_alter(&$query) {
+  if ($query instanceof PagerDefault
+    && ($tables = $query->getTables())
+    && isset($tables['i']['table'])
+    && $tables['i']['table'] === 'search_index') {
+    $query->limit(5);
+  }
 }
