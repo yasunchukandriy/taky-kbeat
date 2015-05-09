@@ -110,17 +110,18 @@ function _custom_get_link_threads() {
  */
 function custom_block_view_alter(&$data, $block) {
 	if ($block->delta == 'language' && $block->module == 'locale') {
-		$languages = language_list();
 		global $language;
-    $path = drupal_is_front_page() ? '' : $_GET['q'];
+    $path = drupal_is_front_page() ? '/' : $_GET['q'];
+		$links = language_negotiation_get_switch_links('language', $path);
 
-		$data['content']  = '<ul id="custom-lanhuage-dropdown" class="nav pull-right"><li class="dropdown menu-item">';
-		$data['content'] .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $language->native .'</a>';
-		$data['content'] .= '<ul class="dropdown-menu">';
-		foreach ($languages as $value) {
-			$data['content'] .= ' <li><a href="/' . $value->language . '/' . $path . '">' . $value->native . '</a></li>';
-		}
-		$data['content'] .= '</ul></li></ul>';
+    if (isset($links->links)) {
+      $variables = array('links' => $links->links, 'attributes' => array('class' => array('dropdown-menu')));
+			$data['content']  = '<ul id="custom-lanhuage-dropdown" class="nav pull-right"><li class="dropdown menu-item">';
+			$data['content'] .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $language->native .'</a>';
+			$data['content'] .= theme('links__locale_block', $variables);
+			$data['content'] .= '</li></ul>';
+    }
+
 	}
 }
 
