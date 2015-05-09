@@ -10,11 +10,3 @@
   module_load_include('inc', 'custom','custom');
   module_load_include('inc', 'custom','custom.block');
 
-
-/**
- * Implements hook_menu_alter().
- */
-function custom_menu_alter(&$items) {
-  $items['node']['access callback'] = FALSE;
-}
-
