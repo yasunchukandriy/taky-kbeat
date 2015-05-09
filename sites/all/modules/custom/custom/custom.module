@@ -10,3 +10,121 @@
   module_load_include('inc', 'custom','custom');
   module_load_include('inc', 'custom','custom.block');
 
+/**
+ * Implements hook_block_info().
+ */
+function custom_block_info() {
+  $blocks['custom_threads_menu'] = array(
+    'info' => t('Threads menu'),
+  );
+
+  $blocks['ask_question'] = array(
+    'info' => t('Ask a question'),
+  );
+
+  $blocks['custom_popup_render'] = array(
+    'info' => t('Custom popup render'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function custom_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'custom_threads_menu':
+      $block['subject'] = t('Threads');
+      $block['content'] = _custom_get_link_threads();
+      break;
+
+    case 'ask_question':
+      $link_text = t('Ask your question');
+      $block['content'] = '<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#block-custom-custom-popup-render">' . $link_text . '</button>';
+      break;
+
+    case 'custom_popup_render':
+      $block['content'] = _custom_popup_render();
+      break;
+
+  }
+  return $block;
+}
+
+/**
+ * Function _get_link_threads().
+ */
+function _custom_get_link_threads() {
+	global $language;
+	$langcode = $language->language;
+
+  $vid = taxonomy_vocabulary_machine_name_load('threads');
+	$taxonomy = taxonomy_get_tree($vid->vid);
+
+	$list = '';
+	$allNumber = 0;
+	foreach ($taxonomy as $key => $terms) {
+		$countNumber = taxonomy_menu_term_count_nodes($terms->tid, $vid->vid);
+		if ($countNumber > 0) {
+			$term = i18n_taxonomy_localize_terms($terms);
+			$path = '/' . $langcode . '/taxonomy/term/' . $terms->tid;
+			$name = $term->name;
+			$list .= "<li><a href='$path'>$name<span>$countNumber</span></li>";
+			$allNumber += $countNumber;
+		}
+	}
+	if (!empty($list)) {
+		$content  = '<ul class="threads-list">';
+		$content .= "<li><a href='/$langcode/taxonomy/term/all-temy'>". t('All replies') ."<span>$allNumber</span></li>";
+		$content .= $list;
+		$content .= '</ul>';
+	}
+
+	return $content;
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function custom_block_view_alter(&$data, $block) {
+	if ($block->delta == 'language' && $block->module == 'locale') {
+		$languages = language_list();
+		global $language;
+    $path = drupal_is_front_page() ? '' : $_GET['q'];
+
+		$data['content']  = '<ul id="custom-lanhuage-dropdown" class="nav pull-right"><li class="dropdown menu-item">';
+		$data['content'] .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $language->native .'</a>';
+		$data['content'] .= '<ul class="dropdown-menu">';
+		foreach ($languages as $value) {
+			$data['content'] .= ' <li><a href="/' . $value->language . '/' . $path . '">' . $value->native . '</a></li>';
+		}
+		$data['content'] .= '</ul></li></ul>';
+	}
+}
+
+/**
+ * Function for render content popup.
+ */
+function _custom_popup_render() {
+  $content = '';
+
+  // $content = '<div class="modal fade" id="checkoutModal" tabindex="-5" role="dialog">';
+  $content .= '<div class="modal-dialog">';
+  $content .= '<div class="modal-content">';
+  $content .= '<div class="modal-header">';
+  $content .= '<span class="title">';
+  $content .= t('Ask your question');
+  $content .= '</span>';
+  $content .= '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+  $content .= '</div>';
+  $content .= '<div class="modal-body">';
+  $block = module_invoke('webform', 'block_view', 'client-block-308');
+  $content .= render($block['content']);
+  $content .= '</div>';
+  $content .= '</div>';
+  $content .= '</div>';
+  // $content .= '</div>';
+  return $content;
+}
