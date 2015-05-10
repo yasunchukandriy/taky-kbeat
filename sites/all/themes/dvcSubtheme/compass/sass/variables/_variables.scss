@@ -89,7 +89,7 @@ $font-family-base:        	'PT Sans Narrow', sans-serif;//$font-family-sans-seri
 //$line-height-large:              1.33;
 //$line-height-small:              1.5;
 
-//$border-radius-base:             4px;
+$border-radius-base:             0px;//4px;
 //$border-radius-large:            6px;
 //$border-radius-small:            3px;
 
@@ -115,30 +115,30 @@ $font-family-base:        	'PT Sans Narrow', sans-serif;//$font-family-sans-seri
 // Buttons
 // -------------------------
 
-//$btn-font-weight:                normal;
+$btn-font-weight:                800;//normal;
 
 //$btn-default-color:              #333;
 //$btn-default-bg:                 #fff;
 //$btn-default-border:             #ccc;
 
 //$btn-primary-color:              #fff;
-//$btn-primary-bg:                 $brand-primary;
+//$btn-primary-bg:                 +g(#fcc47a, #e7a043);//$brand-primary;
 //$btn-primary-border:             darken($btn-primary-bg, 5%);
 
 //$btn-success-color:              #fff;
-//$btn-success-bg:                 $brand-success;
+//$btn-success-bg:                 +g(#fcc47a, #e7a043);//$brand-success;
 //$btn-success-border:             darken($btn-success-bg, 5%);
 
 //$btn-warning-color:              #fff;
-//$btn-warning-bg:                 $brand-warning;
+//$btn-warning-bg:                 +g(#fcc47a, #e7a043); //$brand-warning;
 //$btn-warning-border:             darken($btn-warning-bg, 5%);
 
 //$btn-danger-color:               #fff;
-//$btn-danger-bg:                  $brand-danger;
+//$btn-danger-bg:                  +g(#fcc47a, #e7a043);//$brand-danger;
 //$btn-danger-border:              darken($btn-danger-bg, 5%);
 
 //$btn-info-color:                 #fff;
-//$btn-info-bg:                    $brand-info;
+//$btn-info-bg:                    +g(#fcc47a, #e7a043);//$brand-info;
 //$btn-info-border:                darken($btn-info-bg, 5%);
 
 //$btn-link-disabled-color:        $gray-light;
@@ -146,15 +146,15 @@ $font-family-base:        	'PT Sans Narrow', sans-serif;//$font-family-sans-seri
 // Forms
 // -------------------------
 
-//$input-bg:                       #fff;
+$input-bg:                       #fff;
 //$input-bg-disabled:              $gray-lighter;
 
-//$input-color:                    $gray;
-//$input-border:                   #ccc;
-//$input-border-radius:            $border-radius-base;
+$input-color:                    #000000;//$gray;
+$input-border:                   #c8c8c8;//#ccc;
+$input-border-radius:            $border-radius-base;
 //$input-border-focus:             #66afe9;
 
-//$input-color-placeholder:        $gray-light;
+$input-color-placeholder:        #000000;//$gray-light;
 
 //$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2);
 //$input-height-large:             (floor($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2);
