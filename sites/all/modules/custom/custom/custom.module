@@ -180,7 +180,7 @@ function custom_preprocess_search_result(&$variables) {
 }
 
 /**
- * Implements hook_query_alter
+ * Implements hook_query_alter().
  */
 function custom_query_alter(&$query) {
   if ($query instanceof PagerDefault
@@ -189,4 +189,30 @@ function custom_query_alter(&$query) {
     && $tables['i']['table'] === 'search_index') {
     $query->limit(5);
   }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_form_alter(&$form, &$form_state, $form_id) {
+
+  switch ($form_id) {
+    case 'unisender_subscribe_subscribe_form':
+      $form['name']['#title_display'] = 'invisible';
+      $form['name']['#prefix'] = '';
+      $form['email']['#title_display'] = 'invisible';
+      $form['name']['#weight'] = 0;
+      $form['email']['#weight'] = 1;
+      $form['email']['#attributes']['placeholder'] = t('E-mail adress');
+      $form['name']['#attributes']['placeholder'] = t('Name Surname');
+      $form['#submit'][] = 'custom_unisender_subscribe_subscribe_form_submit';
+      break;
+  }
+}
+
+/**
+ * Submit for unisender_subscribe_subscribe_form.
+ */
+function custom_unisender_subscribe_subscribe_form_submit($form, &$form_state) {
+  drupal_set_message(t('You have successfully signed up for news'));
 }
