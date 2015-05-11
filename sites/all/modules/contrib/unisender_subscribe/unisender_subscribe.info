@@ -1,0 +1,5 @@
+name = Unisender subscribe
+description = Provides an API for user subscription in UniSender system.
+core = 7.x
+
+files[] = vendor/UniSenderApi.inc

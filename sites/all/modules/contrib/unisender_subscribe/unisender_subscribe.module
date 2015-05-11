@@ -1,0 +1,189 @@
+<?php
+
+/**
+ * @file
+ * Defined Drupal hooks implementations.
+ *
+ * @licence Proprietary.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function unisender_subscribe_block_info() {
+  $blocks = array();
+
+  $blocks['subscribe'] = array(
+    'info' => t('UniSender subsription form'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function unisender_subscribe_block_view($delta = '') {
+  if ($delta == 'subscribe' && variable_get('unisender_subscribe_token')) {
+    $content = array();
+    $content['anchor'] = array('#markup' => '<a name="unisender-subscribe-form"></a>');
+
+    if (!empty($_GET['unisender-subscribe']) && $_GET['unisender-subscribe'] === 'success') {
+      $content['#success'] = TRUE;
+      $content['success'] = array(
+        '#markup' => format_string('<p class="success">@text</p>', array(
+          '@text' => t('You have been added to the subscription.'),
+        )),
+      );
+    }
+    else {
+      $content['#success'] = FALSE;
+    }
+    $content['form'] = drupal_get_form('unisender_subscribe_subscribe_form');
+
+    return array(
+      'subject' => '',
+      'content' => $content,
+    );
+  }
+
+  return array();
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function unisender_subscribe_block_configure($delta = '') {
+  $form = array();
+
+  if ($delta == 'subscribe') {
+    $form['unisender_subscribe_token'] = array(
+      '#type' => 'textfield',
+      '#title' => t('UniSender API token:'),
+      '#default_value' => variable_get('unisender_subscribe_token', ''),
+      '#maxlength' => 40,
+      '#required' => FALSE,
+    );
+
+    $form['unisender_subscribe_list_id'] = array(
+      '#type' => 'textfield',
+      '#title' => t('UniSender subscribe list ID:'),
+      '#default_value' => variable_get('unisender_subscribe_list_id', ''),
+      '#maxlength' => 40,
+      '#required' => FALSE,
+    );
+  }
+
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function unisender_subscribe_block_save($delta = '', $edit = array()) {
+  if ($delta == 'subscribe') {
+    variable_set('unisender_subscribe_token', $edit['unisender_subscribe_token']);
+    variable_set('unisender_subscribe_list_id', $edit['unisender_subscribe_list_id']);
+  }
+}
+
+/**
+ * Form builder.
+ *
+ * Creates UniSender subscription form.
+ */
+function unisender_subscribe_subscribe_form($form, &$form_state) {
+
+  $output = "<div class='description'>Подпишись <br />и получай подарки!</div>";
+
+  $form['name'] = array(
+    '#type' => 'textfield',
+    '#title' => "Ваше имя",
+    '#required' => TRUE,
+    '#attributes' => array(
+      'placeholder' => "Ваше имя",
+    ),
+    '#prefix' => $output,
+  );
+
+  $form['email'] = array(
+    '#type' => 'textfield',
+    '#title' => "Ваш E-mail",
+    '#required' => TRUE,
+    '#attributes' => array(
+      'placeholder' => "Ваш E-mail",
+    ),
+  );
+
+  $form['actions'] = array(
+    '#type' => 'actions',
+    'submit' => array(
+      '#type' => 'submit',
+      '#value' => "Подписаться",
+    ),
+  );
+
+  $form['#validate'] = array('unisender_subscribe_subscribe_form_validate');
+  $form['#submit'] = array('unisender_subscribe_subscribe_form_submit');
+  return $form;
+}
+
+/**
+ * Form validate handler.
+ */
+function unisender_subscribe_subscribe_form_validate($form, &$form_state) {
+  $values = $form_state['values'];
+  if (empty($values['name']) || empty($values['email'])) {
+    drupal_set_message("Заполните поле имя и e-mail", 'error');
+  }
+}
+
+/**
+ * Form submit handler.
+ */
+function unisender_subscribe_subscribe_form_submit($form, &$form_state) {
+  $name = $form_state['values']['name'];
+  $email = $form_state['values']['email'];
+
+  $unisender = unisender_subscribe_get_unisenserapi();
+  $subscribe_list = variable_get('unisender_subscribe_list_id', '');
+  if ($unisender && $subscribe_list) {
+    $result = $unisender->subscribe(array(
+      'list_ids' => strval($subscribe_list),
+      'fields' => array(
+        'email' => $email,
+        'Name' => $name,
+      ),
+      'request_ip' => ip_address(),
+      'double_optin' => 0,
+    ));
+    watchdog('unisender', 'Subscribe request result: !data', array('!data' => print_r($result, TRUE)), WATCHDOG_DEBUG);
+    // drupal_set_message(t('Confirmation request sent, please verify your e-mail address'));
+  }
+  else {
+    watchdog('unisender', 'Cannot subscribe user. API token is not configured.', array(), WATCHDOG_WARNING);
+    drupal_set_message(t('Subscribe error, please contact site administrator'), 'error');
+  }
+
+  $form_state['redirect'] = url($_GET['q'], array(
+    'query' => array('unisender-subscribe' => 'success'),
+    'fragment' => 'unisender-subscribe-form',
+    'absolute' => TRUE,
+  ));
+}
+
+/**
+ * Constructs an instance of UniSenderApi with correct parameters.
+ */
+function unisender_subscribe_get_unisenserapi() {
+  static $instance = NULL;
+
+  if (!$instance) {
+    if ($token = variable_get('unisender_subscribe_token', '')) {
+      $instance = new UniSenderApi($token);
+    }
+  }
+
+  return $instance;
+}
