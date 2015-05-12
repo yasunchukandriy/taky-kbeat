@@ -1,0 +1,71 @@
+.page-news
+	h1.page-header
+		margin: 0px auto 50px
+		position: relative
+		padding: 60px 0
+		+fs(35)
+		color: #ffffff
+		height: 162px
+		text-align: center
+		&:before
+			content: ""
+			position: absolute
+			bottom: 45px
+			left: 0
+			right: 0
+			margin: 0 auto
+			height: 2px
+			width: 300px
+			background-color: #fff
+			display: block
+
+.news-content
+	.view-content
+		.views-row
+			clear: both
+			display: inline-block
+			width: 100%
+			margin: 30px 0
+			.views-field-field-image
+				float: left
+				img
+					margin: 5px 30px 30px 0
+			.views-field-title
+				margin-bottom: 15px
+				a
+					text-decoration: underline
+					color: #3c47aa
+					+fs(24)
+					font-family: $font-family-base
+					font-weight: 400
+					line-height: 1.1
+					&:hover,
+					&:focus
+						text-decoration: none
+			.views-field-body
+				margin-bottom: 15px
+				color: #000
+				+fs(13)
+				font-family: $font-noto-type
+				font-weight: 400
+				line-height: 150%
+			
+			.views-field-created
+				font-style: italic
+				color: #777777
+				+fs(13)
+				font-family: $font-noto-type
+				line-height: 150%
+				margin-bottom: 15px
+				
+		.views-row-even
+			.views-field-field-image
+				display: none
+				
+				
+		.views-row-first
+			margin-top: 0px
+			
+			
+			
+		

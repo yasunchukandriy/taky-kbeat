@@ -1,10 +1,67 @@
 //Main menu
 header
-	.menu.nav.navbar-nav
-		a
-			font-family: $font-family-serif
-			font-weight: 400
-			color: #000
-			background-color: transparent
-			&:hover
+	.menu.navbar-nav
+		width: 100%
+		> li
+			float: left
+			a
+				font-family: $font-family-serif
+				font-weight: 400
+				color: #000
+				position: relative
+				z-index: 1
+				+fs(17)
 				background-color: transparent
+				&:hover
+				&.active
+					background-color: transparent
+				
+			>a.active,
+			>a.active-trail 
+				display: block
+				top: 20px
+				&:before
+					content: ""
+					position: absolute
+					top: 6px
+					left: 0px
+					z-index: 0
+					+bgc('menu-active.png')
+					background-size: 100% 71px
+					width: 100%
+					height: 71px
+
+			
+		>li.active
+			>:hover,
+			>a:focus,
+			>a:active
+				background-color: transparent
+		
+		>li.last,
+		.li-contact-item-menu
+			float: right
+		>li.last > a,
+		>li.last > .active,
+		.contact-item-menu,
+		.contact-item-menu.active
+			position: relative
+			text-align: center
+			z-index: 1
+			width: 165px
+			top: 0px
+			
+			&:before
+				content: ""
+				display: block
+				position: absolute
+				+s(menu-callback)
+				z-index: -1
+				left: 0px
+				top: 6px
+				
+				
+	.nav .open > a,
+	.nav .open > a:hover,
+	.nav .open > a:focus
+		background-color: transparent

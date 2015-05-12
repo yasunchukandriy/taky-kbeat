@@ -1,0 +1,52 @@
+.search-block
+	overflow: hidden
+	.input-group
+		position: relative
+		width: 100%
+		.form-control
+			border-radius: 0px
+			+placeholder-color(#000000)
+		.input-group-btn	
+			left:  calc(100% - 30px)
+			top: 11px
+			position: absolute
+			z-index: 2
+			.btn
+				border: none
+				box-shadow: none
+				background-color: transparent
+				+s(search)
+				text-indent: 9999px
+				overflow: hidden
+				&:focus,
+				&:hover
+					outline: none
+					box-shadow: 0px
+					
+
+
+.search-form
+	.input-group
+		width: 100%
+		position: relative
+		color: #000
+		float: right
+		.form-control
+			border-radius: 0px
+			+placeholder-color(#000)
+		.input-group-btn	
+			left:  calc(100% - 30px)
+			top: 10px
+			position: absolute
+			z-index: 2
+			.btn
+				border: none
+				box-shadow: none
+				background-color: transparent
+				+s(search)
+				text-indent: 9999px
+				overflow: hidden
+				&:focus,
+				&:hover
+					outline: none
+					box-shadow: 0px

@@ -1,10 +1,13 @@
 //Foote
-footer.footer
+//footer.footer
+//	border-top: 2px solid #020202
+//	background: red
+	///.region-footer
+	//	padding: 20px 0
+.footer
 	border-top: 2px solid #020202
-	background: red
 	.region-footer
 		padding: 20px 0
-	
 .footer-m-menu
 	margin-bottom: 15px
 	.block-content
@@ -20,6 +23,13 @@ footer.footer
 					&:focus
 						color: #229a86
 						text-decoration: none
+						background-color: transparent
+		ul.menu.nav				
+			>li.first
+				>a
+					padding-left: 0px
+			>li.last
+				display: none
 .copyright-block 
 	+fs(16)
 	min-height: 42px
@@ -28,6 +38,17 @@ footer.footer
 		+fs(16)
 		color: #000000
 		font-family: $font-family-base
+		
+.copiryte
+	+fs(16)
+	min-height: 42px
+	.block-content
+		text-align: right
+		line-height: 42px
+		+fs(16)
+		color: #000000
+		font-family: $font-family-base
+
 .social-block
 	.block-content
 		text-align: center
@@ -53,3 +74,7 @@ footer.footer
 			
 .block-search
 	margin-bottom: 15px
+	
+	
+	
+	

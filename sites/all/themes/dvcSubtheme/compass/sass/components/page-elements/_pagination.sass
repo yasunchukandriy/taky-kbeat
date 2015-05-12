@@ -1,0 +1,65 @@
+.text-center
+	width: 100%
+	clear: both
+	margin-top: 10px
+	margin-bottom: 5px
+.pagination
+	margin: 5px 0
+	li
+		+fs(17)
+		a
+			+fs(17)
+			font-weight: 400
+			color: #3c47aa
+			border-radius: 0px
+			width: 45px
+			height: 61px
+			padding: 12px 3px 22px
+			border: none
+			line-height: 1.1
+			text-decoration: underline
+			background-color: transparent
+			margin: 0 5px
+			vertical-align: top
+			&:hover,
+			&:focus
+				color: #000
+				text-decoration: none
+				background-color: transparent
+	li.active
+		a
+			border: none
+			border-radius: 0px
+			color: #000000
+			background-color: transparent
+			text-decoration: none
+			position: relative
+			+s(paginarion-a)
+			&:hover,
+			&:focus
+				border: none
+				border-radius: 0px
+				color: #000000
+				background-color: transparent
+				
+	li
+		a.progress-disabled
+			position: relative!important
+			float: left!important
+			display: block!important
+			.ajax-progress-throbber
+				display: none !important
+				height: 0px
+				width: 0px
+		//a.progress-disabled
+		
+		
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus
+	border: none
+	color: #3c47aa
+	

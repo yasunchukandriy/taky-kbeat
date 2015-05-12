@@ -1,4 +1,13 @@
-
+html
+	min-height: 100%
+	height: 100%
+body
+	-webkit-font-smoothing: subpixel-antialiased !important
+	-moz-backface-visibility:    hidden
+	-ms-backface-visibility:     hidden
+	min-height: 100%
+	
+	
 //link
 a
 	+tr(all)
@@ -8,20 +17,23 @@ a.btn,
 .btn
 	+g(#fcc47a, #e7a043) 
 	+fs(18)
+	font-family: $font-family-base
 	padding-top: 0px
 	padding-bottom: 0px
 	line-height: 1
-	font-weight: 500
+	font-weight: 600
 	border-radius: 0px
 	height: 42px
 	color: #000000
 	text-align: center
 	box-shadow: none
+	border: none
 	&:hover,
 	&:active,
 	&:focus
-		+g(#7ea40e, #99bf37)
+		+g(#277f73, #2c8879)
 		outline: none
+		border: none
 
 // images
 img
@@ -51,6 +63,8 @@ input[type="text"]
 	border: 1px solid $input-border
 	padding: 6px 12px
 	height: 42px
+	+fs(16)
+	font-weight: 400
 	&:active,
 	&:focus
 		border-color: $border-radius-base
@@ -67,6 +81,68 @@ select
 		outline: 0
 		box-shadow: none
 		
+
+//
+#page-header
+	+g(#277f73, #2c8879)
+	text-align: center
+	min-height: 162px
+	margin: 0px auto 50px
+	position: relative
+	.posrelative
+		position: relative
+		width: 100%
+	h1.page-header
+		margin: 0px auto
+		position: relative
+		padding: 60px 60px
+		+fs(35)
+		color: #ffffff
+		height: 162px
+		text-align: center
+		border: none
+		&:before
+			content: ""
+			position: absolute
+			bottom: 45px
+			left: 0
+			right: 0
+			margin: 0 auto
+			height: 2px
+			width: 300px
+			background-color: #fff
+			display: block
+	.block-flippy
+		position: absolute
+		top: 50%
+		width: 100%
+		.flippy
+			margin: 0px
+			padding: 0px
+			li
+				padding: 0px
+				margin: 0px
+				a
+					position: absolute
+					top: 50%
+					margin: -25px 0 0 0
+					text-indent: -9999px
+					overflow: hidden
+					display: block
+					opacity: 1
+					&:hover,
+					&:focus
+						opacity: 0.7
+			.empty
+				display: none
+			.prev
+				a
+					+s(prev)
+					left: 0px
+			.next
+				a
+					+s(next)
+					right: 0px
 
 
 
@@ -118,30 +194,7 @@ select
 		padding: 15px 27px
 		width: 100%
 		
-.discount-info-block
-	.modal-main
-		overflow: hidden
-		text-align: center
-	
-//feedback-link
-a.feedback-link
-	position: relative
-	height: 28px
-	//color: $button-color-def
-	+fs(16)
-	font-weight: 500
-	padding-left: 30px
-	min-width: 200px
-	text-decoration: none
-	line-height: 26px
-	&:after
-		content: ""
-		position: absolute
-		left: 2.5px
-		top: 2px
-		//+s(ico-ask-grey)
-				
-				
+		
 
 	
 //popup center
@@ -273,3 +326,22 @@ body
 /*  color: #999 !important;*/
 /*  background-color: transparent !important;*/
 /*}*/
+
+.container-fluid
+	width: 100%
+
+.main-container
+	margin-bottom: 50px
+	clear: both
+
+.footer
+	clear: both
+	display: block
+	position: absolute
+	width: 100%
+	bottom: 0px
+	min-height: 130px
+	border-top: 2px solid #020202
+	
+	.region-footer
+		padding: 20px 0

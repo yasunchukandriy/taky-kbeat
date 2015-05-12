@@ -1,0 +1,89 @@
+.view-questions-and-answers
+	.view-content
+		.panel
+			border: none
+			box-shadow: none
+			.panel-heading
+				padding-left: 54px
+				padding-bottom: 30px
+				border: none
+				background-color: transparent
+				box-shadow: none
+				.panel-title
+					a
+						color: #3c47aa
+						+fs(24)
+						text-decoration: underline
+						position: relative
+						font-weight: 400
+						&:before
+							content: ""
+							position: absolute
+							top: 0px
+							left: -54px
+							display: block
+							+s(asc-d)
+						
+						
+					a:hover,
+					a:focus,
+					a.activa
+						text-decoration: underline
+						color: #000000
+						
+						&:before
+							+s(asc-a)
+			.panel-body
+				border: none
+				padding-left: 54px
+				
+				
+				
+				
+//custom-threads-menu-custom
+.custom-threads-menu-custom
+	.block-title
+		+fs(24)
+	.block-content
+		ul
+			list-style: none
+			padding: 0 0 0 12px
+			li
+				clear: both
+				margin: 8px 0
+				a
+					color: #3c47aa
+					border-bottom: 1px solid #c8c8c8
+					+fs(14)
+					text-decoration: none
+					position: relative
+					display: inline-block
+					line-height: 1.2
+					margin-right: 15px
+					span
+						+fs(12)
+						color: #777777
+						font-style: italic
+						vertical-align: super
+						text-decoration: none
+						position: absolute
+						line-height: 1
+						display: block
+						left: 105%
+						top: 0
+						
+					&:hover
+						color: #229a86
+						border-bottom: 1px solid #fff
+				a.active
+					color: #229a86
+					border-bottom: 1px solid #fff
+					&:before
+						content: ""
+						+s(list-ico)
+						display: block
+						position: absolute
+						left: -9px
+						top: 4px
+				
+				
