@@ -161,16 +161,22 @@ select
 	&-header
 		position: relative
 		border-bottom: 0px
-		padding: 15px 27px
+		padding: 40px 40px 5px
+		.title
+			font-family: $font-family-base
+			+fs(24)
+			color: #229a86
+			font-weight: 400
+			line-height: 1.1
 		button.close
-			//+s(close-popup)
+			+s(close)
 			padding: 0px
 			position: absolute
-			top: -17px
-			right: -17px
+			top: 0px
+			right: 0px
 			background-color: transparent
 			border: 0px
-			border-radius: 50%
+			border-radius: 0
 			margin: 0px
 			opacity: 1
 			text-indent: -9999px
@@ -178,11 +184,14 @@ select
 			&:focus,
 			&:hover
 				outline: none
+				opacity: 0.8
 	&-content
-		//width: 366px
+		max-width: 600px
+		height: 425px
+		border: 4px dashed #229A86
+		border-radius: 0px
+		background: #fff
 		margin: 0px 0
-		//background-color: $body-bg
-		//border: $border-bold-green
 		a
 			color: #89a90e
 		a.btn
@@ -209,23 +218,47 @@ select
 		margin-bottom: auto
 		position: absolute
 		.modal-body
-			.view-content
-				overflow-x: hidden
-				overflow-y: auto
-				height: 240px
+			padding: 15px 40px 40px
+			form
+				.webform-component
+					margin-bottom: 15px
+					+fs(16)
+					input,
+					textarea
+						+placeholder-color(#000000)
+						+fs(16)
+				.webform-component--imya-familiya,
+				.webform-component--vvedite-temu-voprosa
+					float: left
+					width: 48%
+					margin-right: 2%
+				.webform-component--elektronnyy-adres,
+				.webform-component--tekst
+					float: right
+					width: 48%
+					margin-left: 2%
+					min-height: 42px
+				.webform-component--tekst	
+					line-height: 20px
+					+fs(12)
+					color: #000//#777777
+					p
+						margin-bottom: 0px
+				.webform-component-textarea
+					clear: both
+					textarea
+						min-height: 120px
+						resize: none//vertical
+						
+			.form-submit
+				width: 230px
 		
-.block-multiblock.modal 
-	.modal-dialog
-		height: 460px
-		top: 50%
-		bottom: 0
-		left: 0
-		right: 0
-		margin-top: -230px
-		margin-bottom: auto
-		position: absolute
-		
-		
+.main-container
+	>.row
+		>.col-xs-9
+			width: calc(100% - 270px)
+		>.col-xs-3
+			width: 270px
 
 	
 /* Template-specific stuff

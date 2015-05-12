@@ -1,0 +1,127 @@
+
+//Deffoult node
+.page-node
+	.node
+		font-family: $font-noto-type
+			+fs(13)
+			
+		.field-type-image
+			width: 370px
+			height: 275px
+			float: left
+			margin: 0 30px 30px 0
+			.field-item
+				display: table-cell
+				vertical-align: middle
+				text-align: center
+				width: 370px
+				height: 275px
+				img
+				margin: 0 auto
+		.field-name-post-date
+			color: #777777
+			margin-bottom: 30px
+		.field-name-body
+			margin-bottom: 35px
+			color: #000
+			h2,
+			h3,
+			h4
+				font-family: $font-family-base
+				color: #229a86
+		.field-name-share-news
+			h2.block-title
+				font-family: $font-family-base
+				+fs(24)
+				color: #229a86
+				font-weight: 400
+				margin-bottom: 25px
+		.field-name-back-to-news
+		.field-name-back-to-services
+			margin-bottom: 30px
+			a
+				color: #3c47aa
+				+fs(23)
+				border-bottom: 1px solid #c8c8c8
+				text-decoration: none
+				position: relative
+				margin-left: 35px
+				line-height: 1
+				&:before
+					content: ""
+					position: absolute
+					top: 6px
+					left: -35px
+					+s(backnews)
+					
+		
+		
+		
+//Node-services
+.node-type-services
+	.field-name-ask-question
+		margin-bottom: 35px
+		a.btn,
+		.btn
+			width: 230px
+	.field-name-field-full-content
+		margin-bottom: 35px
+	.field-name-field-important-information
+		margin-bottom: 35px
+		background-color: #229a86
+		padding: 20px
+		color: #fff
+	.field-name-field-links,
+	.field-name-field-add-file
+		margin-bottom: 35px
+		padding: 20px
+		border: 4px solid #fdc17b
+		
+	.field-name-block-zadaty-vopros
+		border: 4px dashed #229A86
+		padding: 20px
+		margin-bottom: 35px
+		form
+			.webform-component
+				margin-bottom: 15px
+				+fs(16)
+				input,
+				textarea
+					+placeholder-color(#000000)
+					+fs(16)
+			.webform-component--imya-familiya,
+			.webform-component--vvedite-temu-voprosa
+				float: left
+				width: 48%
+				margin-right: 2%
+			.webform-component--elektronnyy-adres,
+			.webform-component--tekst
+				float: right
+				width: 48%
+				margin-left: 2%
+				min-height: 42px
+			.webform-component--tekst	
+				line-height: 20px
+				+fs(12)
+				color: #000//#777777
+				p
+					margin-bottom: 0px
+			.webform-component-textarea
+				clear: both
+				textarea
+					min-height: 120px
+					resize: none//vertical
+					
+		.form-submit
+			width: 230px	
+		
+	.field-name-field-video
+		margin-bottom: 30px
+		iframe
+			max-width: 100%
+	
+	
+		
+		
+
+//Node-news
