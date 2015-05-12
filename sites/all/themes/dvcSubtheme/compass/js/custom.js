@@ -36,7 +36,7 @@ Drupal.behaviors.footerIfIeCustom = {
     $(HeightFoo).outerHeight( true );
     var pxH = $(HeightFoo).outerHeight( true );
     //alert(pxH);
-    console.log(pxH)
+    //console.log(pxH)
     $('body').css('position','relative');
     HeightFoo.css('position','absolute');
     $('body').css('padding-bottom',pxH);
