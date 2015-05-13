@@ -48,17 +48,34 @@ Drupal.behaviors.footerIfIeCustom = {
 
 Drupal.behaviors.siteMap = {
   attach: function(context, settings) {
-  
     var HeightFoo = $('ul.dropdown-menu');
     $('.site-map-block').find( 'ul.dropdown-menu').removeClass('dropdown-menu');
-    
-
-    
-    
-  
   }
 };
 
+
+Drupal.behaviors.servisesUnited = {
+  attach: function(context, settings) {
+    
+    $('.node-type-services .field-name-field-add-file, .node-type-services  .field-name-field-links').wrapAll( "<div class='newwrapper' />");
+    $('.node-type-services.i18n-ru .field-name-field-add-file a').each(function(){
+      $(this).text('Скачать перечень документов');
+    });
+    $('.node-type-services.i18n-en .field-name-field-add-file a').each(function(){
+      $(this).text('Download the list of documents');
+    });
+    
+    $('.node-type-services.i18n-ru .field-name-field-links .field-item a').each(function(){
+      $(this).text('Таможенный реестр на сайте ГТС РК');
+    });
+    $('.node-type-services.i18n-en .field-name-field-links .field-item a').each(function(){
+      $(this).text('Customs Register online CTA RK');
+    });
+    
+    
+    
+  }
+};
 
  
 })(jQuery);
