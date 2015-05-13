@@ -10,6 +10,19 @@
 	height: 642px
 	.highlighted
 		background: transparent
+		height: 642px
+		padding: 0px 15px
+		margin: 0px auto
+		.slider-front
+			.item
+				height: 642px
+			
+		
+		
+		
+		
+		
+		
 .content-region-class-second
 	overflow: hidden
 	+bgc('bc2_opt.jpeg')
@@ -41,9 +54,127 @@
 			width: 300px
 			background-color: #229A86
 			display: block
+	.block-content
+		position: relative
+		height: 480px
+		.problem
+			border-bottom: 1px dashed #C8C8C8
+			+fs(16)
+			font-family: $font-noto-type
+			position: absolute
+			text-decoration: none
+			&:hover,
+			&:focus
+				text-decoration: none
+				border-bottom: 0px  
+		.problem-1
+			top: 50px
+			left: 3%
+		.problem-2
+			top: 50px
+			left: 73%
+		.problem-3
+			top: 175px
+			left: 3%
+		.problem-4
+			top: 175px
+			left: 73%
+		.problem-5
+			top: 285px
+			left: 3%
+		.problem-6
+			top: 285px
+			left: 73%
+		.problem-7
+			top: 430px
+			left: 36.5%
 	
-	
+// Third part gront page	
 .content-region-class-third
 	overflow: hidden
 	+bgc('bc_opt.jpeg')
 	height: 642px
+	
+	
+.news-block-front
+	width: 66.6666666667%
+	float: left
+	padding-right: 30px
+	h2.block-title
+		float: right
+		width: 50%
+		margin: 0px auto
+		position: relative
+		padding: 60px 0px
+		clear: both
+		+fs(35)
+		color: #FDC17B
+		height: 162px
+		text-align: center
+		border: none
+		&:before
+			content: ""
+			position: absolute
+			bottom: 45px
+			left: 0
+			right: 0
+			margin: 0 auto
+			height: 2px
+			width: 100%
+			background-color: #ffffff
+			display: block
+	.news-content-front
+		.view-content
+			clear: both
+			.views-row
+				float: left
+				width: 50%
+				padding-right: 15px
+				.views-field-title
+					a
+						font-family: $font-noto-type
+						+fs(18)
+						color: #FDC17B
+						margin-bottom: 20px
+						text-decoration: none
+						display: inline-block
+						&:hover
+							text-decoration: none
+				.views-field-body
+					font-family: $font-noto-type
+					+fs(13)
+					color: #fff
+					margin-bottom: 20px
+				.views-field-created
+					color: #fff
+					margin-bottom: 20px
+		.view-footer
+			float: right
+			width: 50%
+			text-align: center
+			a
+				+fs(16)
+				color: #FDC17B
+				text-decoration: underline
+			
+.most-important-news
+	margin-top: 162px
+	width: 29.3333333333%
+	border: 4px dashed #fff
+	padding: 15px
+	h2,
+	h2.block-title
+		font-family: $font-family-base
+		+fs(24)
+		color: #fff
+		font-weight: 400
+		margin: 10px auto 20px
+	.block-content	
+		form
+			.btn
+				width: 100%
+				&:hover,
+				&:focus
+					+g(#fcc47a, #e7a043)
+					color: #fff
+						
