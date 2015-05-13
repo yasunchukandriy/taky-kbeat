@@ -16,10 +16,45 @@
 		.slider-front
 			.item
 				height: 642px
-			
-		
-		
-		
+				padding-bottom: 50px
+				.field-content
+					height: 592px
+					padding-bottom: 0px
+					padding-left: 140px
+					overflow: hidden
+					width: 940px
+					display: table-cell
+					vertical-align: bottom
+					color: #fff
+					+fs(35)
+			.carousel-control
+				top: 50%
+				margin-top: -25px
+				span
+					display: none
+			.carousel-control.left
+				+s(prev)
+				
+			.carousel-control.right
+				+s(next)
+			.carousel-indicators
+				display: table
+				li
+					display: table-cell
+					width: auto
+					min-width: 10px
+					height: 6px
+					border: none
+					background: rgba( 255,255,255, 0.7)
+					border-radius: 0px
+				li:first-child
+					border-bottom-left-radius: 3px
+					border-top-left-radius: 3px
+				li:last-child
+					border-bottom-right-radius: 3px
+					border-top-right-radius: 3px
+				li.active
+					background: #FDC17B
 		
 		
 		
