@@ -58,12 +58,12 @@
         <?php endif; ?>
         <a id="main-content"></a>
         <?php if (!empty($page['content'])): ?>
-          <div class="content-region-class">
+          <div class="content-region-class-second">
            <div class="content container"><?php print render($page['content']); ?></div>
           </div>
         <?php endif; ?>
         <?php if (!empty($page['news_block'])): ?>
-          <div class="content-region-class">
+          <div class="content-region-class-third">
             <div class="news-block container"><?php print render($page['news_block']); ?></div>
           </div>
         <?php endif; ?>

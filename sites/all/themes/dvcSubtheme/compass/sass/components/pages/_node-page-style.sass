@@ -1,5 +1,4 @@
-
-//Deffoult node
+//Deffault node
 .page-node
 	.node
 		font-family: $font-noto-type
@@ -10,6 +9,9 @@
 			height: 275px
 			float: left
 			margin: 0 30px 30px 0
+			//-webkit-box-shadow: 7px 7px 13px -8px rgba(0,0,0,0.75);
+			//-moz-box-shadow: 7px 7px 13px -8px rgba(0,0,0,0.75);
+			box-shadow: 7px 7px 13px -8px rgba(0,0,0,0.75)
 			.field-item
 				display: table-cell
 				vertical-align: middle
@@ -30,13 +32,14 @@
 				font-family: $font-family-base
 				color: #229a86
 		.field-name-share-news
+			margin-bottom: 30px
 			h2.block-title
 				font-family: $font-family-base
 				+fs(24)
 				color: #229a86
 				font-weight: 400
 				margin-bottom: 25px
-		.field-name-back-to-news
+		.field-name-back-to-news,
 		.field-name-back-to-services
 			margin-bottom: 30px
 			a

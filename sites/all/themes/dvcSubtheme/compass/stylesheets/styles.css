@@ -7729,6 +7729,50 @@ header .menu.navbar-nav .contact-item-menu.active:before {
   margin-bottom: 15px;
 }
 
+.highlighted-region-class {
+  overflow: hidden;
+  background-image: url('../images/bc_opt.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  clear: both;
+  height: 642px;
+}
+.highlighted-region-class .highlighted {
+  background: transparent;
+}
+
+.content-region-class-second {
+  overflow: hidden;
+  background-image: url('../images/bc2_opt.jpeg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  clear: both;
+  min-height: 700px;
+}
+
+.effect-solution-problems {
+  background-image: url('../images/w_opt1.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  height: 660px;
+  background-position: center center;
+}
+
+.content-region-class-third {
+  overflow: hidden;
+  background-image: url('../images/bc_opt.jpeg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  height: 642px;
+}
+
 .list-group-style .view-content .list-group-item {
   padding-left: 0px;
   padding-right: 0px;
@@ -7849,6 +7893,7 @@ header .menu.navbar-nav .contact-item-menu.active:before {
   height: 275px;
   float: left;
   margin: 0 30px 30px 0;
+  box-shadow: 7px 7px 13px -8px rgba(0, 0, 0, 0.75);
 }
 .page-node .node .field-type-image .field-item {
   display: table-cell;
@@ -7872,6 +7917,9 @@ header .menu.navbar-nav .contact-item-menu.active:before {
   font-family: "PT Sans Narrow", sans-serif;
   color: #229a86;
 }
+.page-node .node .field-name-share-news {
+  margin-bottom: 30px;
+}
 .page-node .node .field-name-share-news h2.block-title {
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 24px;
@@ -7880,9 +7928,11 @@ header .menu.navbar-nav .contact-item-menu.active:before {
   font-weight: 400;
   margin-bottom: 25px;
 }
+.page-node .node .field-name-back-to-news,
 .page-node .node .field-name-back-to-services {
   margin-bottom: 30px;
 }
+.page-node .node .field-name-back-to-news a,
 .page-node .node .field-name-back-to-services a {
   color: #3c47aa;
   font-size: 23px;
@@ -7893,6 +7943,7 @@ header .menu.navbar-nav .contact-item-menu.active:before {
   margin-left: 35px;
   line-height: 1;
 }
+.page-node .node .field-name-back-to-news a:before,
 .page-node .node .field-name-back-to-services a:before {
   content: "";
   position: absolute;
