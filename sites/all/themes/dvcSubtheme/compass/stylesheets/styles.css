@@ -7258,6 +7258,7 @@ body {
 
 .footer-m-menu {
   margin-bottom: 15px;
+  height: 42px;
 }
 .footer-m-menu .block-content {
   font-family: "PT Sans Narrow", sans-serif;
@@ -8431,6 +8432,54 @@ header .menu.navbar-nav .contact-item-menu.active:before {
 }
 .for404block .block-content ul {
   list-style-image: url("../images/list-ico.png");
+}
+
+.block-multiblock.search-block .input-group {
+  width: 230px;
+}
+
+.search-results li {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-size: 2.4rem;
+  color: #777777;
+}
+.search-results li h3 {
+  font-size: 24px;
+  font-size: 2.4rem;
+  color: #3c47aa;
+}
+.search-results li h3 a {
+  text-decoration: underline;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin: 5px auto 10px;
+  color: #3c47aa;
+}
+.search-results li .search-snippet-info {
+  color: #000;
+  font-size: 13px;
+  font-size: 1.3rem;
+  font-family: "Noto Sans", sans-serif;
+}
+.search-results li .search-snippet-info strong {
+  color: #229a86;
+  font-weight: 400;
+}
+.search-results li .search-snippet-info .search-section {
+  font-style: italic;
+  color: #777777;
+}
+.search-results li .search-snippet-info .search-section .content-section {
+  margin-left: 4px;
+  color: #3c47aa;
+  border-bottom: 1px solid #777777;
+}
+.search-results li .search-snippet-info .search-section .content-section a {
+  color: #3c47aa;
+  text-decoration: none;
 }
 
 .site-map-block .block-content ul.menu.nav {
