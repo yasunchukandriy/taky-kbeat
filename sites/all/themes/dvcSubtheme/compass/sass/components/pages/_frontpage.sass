@@ -1,5 +1,8 @@
-
-
+.front
+	>.main-container
+		margin-bottom: 0px
+	>.footer
+		border-color: transparent
 .highlighted-region-class
 	overflow: hidden
 	+bgc('bc_opt.jpg')
@@ -17,7 +20,27 @@
 	+bg('w_opt1.png')
 	height: 660px
 	background-position: center center
-	
+	h2.block-title
+		margin: 0px auto
+		position: relative
+		padding: 60px 60px
+		clear: both
+		+fs(35)
+		color: #229A86
+		height: 162px
+		text-align: center
+		border: none
+		&:before
+			content: ""
+			position: absolute
+			bottom: 45px
+			left: 0
+			right: 0
+			margin: 0 auto
+			height: 2px
+			width: 300px
+			background-color: #229A86
+			display: block
 	
 	
 .content-region-class-third

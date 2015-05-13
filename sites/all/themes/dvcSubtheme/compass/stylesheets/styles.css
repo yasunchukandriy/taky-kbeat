@@ -7368,7 +7368,18 @@ header.navbar-default .language-block {
   float: left;
 }
 header.navbar-default .language-block #custom-lanhuage-dropdown a.dropdown-toggle {
-  padding: 6px 10px;
+  padding: 4px 10px;
+  position: relative;
+}
+header.navbar-default .language-block #custom-lanhuage-dropdown a.dropdown-toggle:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  margin-top: -2px;
+  background: url('../images/icons-se805c2d01a.png') 0 -293px no-repeat;
+  width: 7px;
+  height: 4px;
 }
 header.navbar-default .header-phone {
   float: right;
@@ -7729,6 +7740,13 @@ header .menu.navbar-nav .contact-item-menu.active:before {
   margin-bottom: 15px;
 }
 
+.front > .main-container {
+  margin-bottom: 0px;
+}
+.front > .footer {
+  border-color: transparent;
+}
+
 .highlighted-region-class {
   overflow: hidden;
   background-image: url('../images/bc_opt.jpg');
@@ -7761,6 +7779,30 @@ header .menu.navbar-nav .contact-item-menu.active:before {
   background-color: transparent;
   height: 660px;
   background-position: center center;
+}
+.effect-solution-problems h2.block-title {
+  margin: 0px auto;
+  position: relative;
+  padding: 60px 60px;
+  clear: both;
+  font-size: 35px;
+  font-size: 3.5rem;
+  color: #229A86;
+  height: 162px;
+  text-align: center;
+  border: none;
+}
+.effect-solution-problems h2.block-title:before {
+  content: "";
+  position: absolute;
+  bottom: 45px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 2px;
+  width: 300px;
+  background-color: #229A86;
+  display: block;
 }
 
 .content-region-class-third {
@@ -8089,6 +8131,28 @@ header .menu.navbar-nav .contact-item-menu.active:before {
 }
 .for404block .block-content ul {
   list-style-image: url("../images/list-ico.png");
+}
+
+.site-map-block .block-content ul.menu.nav {
+  list-style: none;
+}
+.site-map-block .block-content ul.menu.nav .caret {
+  display: none;
+}
+.site-map-block .block-content ul.menu.nav > li > a {
+  font-size: 24px;
+  font-size: 2.4rem;
+  text-decoration: underline;
+}
+.site-map-block .block-content ul.menu.nav > li > ul {
+  font-size: 18px;
+  font-size: 1.8rem;
+  list-style-image: url("../images/list-ico.png");
+}
+.site-map-block .block-content ul.menu.nav > li > ul li a {
+  font-size: 18px;
+  font-size: 1.8rem;
+  text-decoration: underline;
 }
 
 .view-questions-and-answers .view-content .panel {

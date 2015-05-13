@@ -20,7 +20,16 @@ header.navbar-default
 		float: left
 		#custom-lanhuage-dropdown
 			a.dropdown-toggle
-				padding: 6px 10px
+				padding: 4px 10px
+				position: relative
+				&:before
+					content: ""
+					position: absolute
+					left: 0px
+					top: 50%
+					margin-top: -2px
+					+s(lang-ico)
+					
 	
 	
 	.header-phone

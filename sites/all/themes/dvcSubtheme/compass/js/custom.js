@@ -45,6 +45,21 @@ Drupal.behaviors.footerIfIeCustom = {
   
   }
 };
+
+Drupal.behaviors.siteMap = {
+  attach: function(context, settings) {
+  
+    var HeightFoo = $('ul.dropdown-menu');
+    $('.site-map-block').find( 'ul.dropdown-menu').removeClass('dropdown-menu');
+    
+
+    
+    
+  
+  }
+};
+
+
  
 })(jQuery);
 
