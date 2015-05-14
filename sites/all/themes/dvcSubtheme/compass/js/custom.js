@@ -65,12 +65,12 @@ Drupal.behaviors.servisesUnited = {
       $(this).text('Download the list of documents');
     });
     
-    $('.node-type-services.i18n-ru .field-name-field-links .field-item a').each(function(){
-      $(this).text('Таможенный реестр на сайте ГТС РК');
-    });
-    $('.node-type-services.i18n-en .field-name-field-links .field-item a').each(function(){
-      $(this).text('Customs Register online CTA RK');
-    });
+    // $('.node-type-services.i18n-ru .field-name-field-links .field-item a').each(function(){
+    //   $(this).text('Таможенный реестр на сайте ГТС РК');
+    // });
+    // $('.node-type-services.i18n-en .field-name-field-links .field-item a').each(function(){
+    //   $(this).text('Customs Register online CTA RK');
+    // });
     
     
     
