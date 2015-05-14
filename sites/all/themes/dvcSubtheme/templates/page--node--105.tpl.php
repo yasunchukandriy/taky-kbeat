@@ -41,11 +41,11 @@
   </div>
 </header>
 
-<div class="main-container">
+<div class="main-container container-fluid">
 
   <div class="row">
 
-    <section<?php print $content_column_class; ?>>
+    <section<?php /*print $content_column_class;*/ ?>>
       <div class="content-wrapper-bg-opacity clearfix">
         <div class="content-wrapper-bg">
         <?php if (!empty($page['highlighted'])): ?>
