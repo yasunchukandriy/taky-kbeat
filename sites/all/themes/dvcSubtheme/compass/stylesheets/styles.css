@@ -8475,6 +8475,14 @@ header .menu.navbar-nav > li.first {
   width: 230px;
 }
 
+.page-node-104 #block-system-main .block-content h2,
+.page-page-not-found #block-system-main .block-content h2 {
+  font-size: 25px;
+  font-size: 2.5rem;
+  font-family: "PT Sans Narrow", sans-serif;
+  color: #229a86;
+}
+
 .search-results li {
   margin-bottom: 25px;
   font-size: 24px;
@@ -8517,6 +8525,40 @@ header .menu.navbar-nav > li.first {
 .search-results li .search-snippet-info .search-section .content-section a {
   color: #3c47aa;
   text-decoration: none;
+}
+
+.page-node-309 #block-system-main .block-content ul.menu.nav,
+.page-site-map #block-system-main .block-content ul.menu.nav {
+  list-style: none;
+}
+.page-node-309 #block-system-main .block-content ul.menu.nav .caret,
+.page-site-map #block-system-main .block-content ul.menu.nav .caret {
+  display: none;
+}
+.page-node-309 #block-system-main .block-content ul.menu.nav > li > a,
+.page-site-map #block-system-main .block-content ul.menu.nav > li > a {
+  font-size: 24px;
+  font-size: 2.4rem;
+  text-decoration: underline;
+  line-height: 1.2;
+}
+.page-node-309 #block-system-main .block-content ul.menu.nav > li > ul,
+.page-site-map #block-system-main .block-content ul.menu.nav > li > ul {
+  font-size: 18px;
+  font-size: 1.8rem;
+  list-style-image: url("../images/list-ico.png");
+}
+.page-node-309 #block-system-main .block-content ul.menu.nav > li > ul li a,
+.page-site-map #block-system-main .block-content ul.menu.nav > li > ul li a {
+  font-size: 18px;
+  font-size: 1.8rem;
+  text-decoration: underline;
+}
+.page-node-309 #block-system-main .block-content ul.menu.nav a:hover,
+.page-node-309 #block-system-main .block-content ul.menu.nav a:focus,
+.page-site-map #block-system-main .block-content ul.menu.nav a:hover,
+.page-site-map #block-system-main .block-content ul.menu.nav a:focus {
+  background-color: transparent;
 }
 
 .site-map-block .block-content ul.menu.nav {

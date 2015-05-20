@@ -1,5 +1,28 @@
-.page-node-309
-
+.page-node-309,
+.page-site-map
+	#block-system-main
+		.block-content
+			ul.menu.nav
+				list-style: none
+				.caret
+					display: none
+				>li
+					>a
+						+fs(24)
+						text-decoration: underline
+						line-height: 1.2
+					>ul
+						+fs(18)
+						list-style-image: url('../images/list-ico.png')
+						li
+							a
+								+fs(18)
+								text-decoration: underline
+							
+				a:hover,
+				a:focus
+					background-color: transparent
+					
 .site-map-block
 	.block-content
 		ul.menu.nav
