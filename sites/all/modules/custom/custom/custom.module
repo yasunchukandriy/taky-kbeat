@@ -250,13 +250,14 @@ function custom_form_alter(&$form, &$form_state, $form_id) {
     case 'unisender_subscribe_subscribe_form':
       $form['name']['#title_display'] = 'invisible';
       $form['name']['#prefix'] = '';
+      $form['name']['#title'] = t('Name Surname');
+      $form['email']['#title'] = t('E-mail adress');
       $form['email']['#title_display'] = 'invisible';
       $form['name']['#weight'] = 0;
       $form['email']['#weight'] = 1;
       $form['email']['#attributes']['placeholder'] = t('E-mail adress');
       $form['name']['#attributes']['placeholder'] = t('Name Surname');
       $form['actions']['submit']['#value'] = t('Subscribe');
-      // drupal_set_message('<pre><h1><i style="color:grey"><u>debug:</u></i></h1> ' . check_plain(print_r($form, 1)) . '</pre>');
       $form['#submit'][] = 'custom_unisender_subscribe_subscribe_form_submit';
       break;
     case 'webform_client_form_308':
@@ -267,12 +268,16 @@ function custom_form_alter(&$form, &$form_state, $form_id) {
 		  $form['submitted']['tekst_voprosa']['#attributes']['placeholder'] = t('Your question');
       break;
     case 'webform_client_form_107':
-		  $form['submitted']['imya_familiya']['#attributes']['placeholder'] = t('Name Surname');
-		  $form['submitted']['elektronnyy_adres']['#attributes']['placeholder'] = t('E-mail adress');
+      $form['submitted']['imya_familiya']['#attributes']['placeholder'] = t('Name Surname');
+		  $form['submitted']['imya_familiya']['#title'] = t('Name Surname');
+      $form['submitted']['elektronnyy_adres']['#attributes']['placeholder'] = t('E-mail adress');
+		  $form['submitted']['elektronnyy_adres']['#title'] = t('E-mail adress');
 		  $form['submitted']['tema_pisma']['#attributes']['placeholder'] = t('Enter the subject of the question');
-		  $form['submitted']['tema_pisma']['#title'] = t('Enter the subject of the question');
 		  $form['submitted']['tekst']['#markup'] = t('Those who point out the topic we respond faster');
-		  $form['submitted']['tekst_pisma']['#attributes']['placeholder'] = t('Text of letter');
+      $form['submitted']['tekst_pisma']['#attributes']['placeholder'] = t('Text of letter');
+		  $form['submitted']['tekst_pisma']['#title'] = t('Text of letter');
+      // drupal_set_message('<pre><h1><i style="color:grey"><u>debug:</u></i></h1> ' . check_plain(print_r($form_id, 1)) . '</pre>');
+
       break;
   }
 }
