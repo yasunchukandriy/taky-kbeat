@@ -29,9 +29,23 @@ function custom_menu() {
   	'page callback' => 'custom_404_error_callback',
   	'access callback' => TRUE,
   );
-  
+  $items['site-map'] = array(
+  	'title' 				=> t('Site map'),
+  	'page callback' => 'custom_sitemap_callback',
+  	'access callback' => TRUE,
+  );
   return $items;
 }
+
+/**
+ * Callback function for page Site map.
+ */
+function custom_sitemap_callback() {
+	$main_menu_tree = menu_tree('main-menu');
+
+	return drupal_render($main_menu_tree);
+}
+
 /**
  * Callback function for page 404.
  */
@@ -143,12 +157,12 @@ function custom_block_view_alter(&$data, $block) {
     $path = drupal_is_front_page() ? '/' : $_GET['q'];
 		$links = language_negotiation_get_switch_links('language', $path);
 		if ($language->language == 'ru') {
-			$language->native = 'Рус';
+			$language->native = t('Rus');
 		} else {
-			$language->native = 'Aнгл';
+			$language->native = t('Eng');
 		}
-		$links->links['en']['title'] = 'Aнгл';
-		$links->links['ru']['title'] = 'Рус';
+		$links->links['en']['title'] = t('Eng');
+		$links->links['ru']['title'] = t('Rus');
 
     if (isset($links->links)) {
       $variables = array('links' => $links->links, 'attributes' => array('class' => array('dropdown-menu')));
@@ -231,7 +245,6 @@ function custom_query_alter(&$query) {
  * Implements hook_form_alter().
  */
 function custom_form_alter(&$form, &$form_state, $form_id) {
-
   switch ($form_id) {
     case 'unisender_subscribe_subscribe_form':
       $form['name']['#title_display'] = 'invisible';
@@ -242,6 +255,21 @@ function custom_form_alter(&$form, &$form_state, $form_id) {
       $form['email']['#attributes']['placeholder'] = t('E-mail adress');
       $form['name']['#attributes']['placeholder'] = t('Name Surname');
       $form['#submit'][] = 'custom_unisender_subscribe_subscribe_form_submit';
+      break;
+    case 'webform_client_form_308':
+		  $form['submitted']['imya_familiya']['#attributes']['placeholder'] = t('Name Surname');
+		  $form['submitted']['elektronnyy_adres']['#attributes']['placeholder'] = t('E-mail adress');
+		  $form['submitted']['vvedite_temu_voprosa']['#attributes']['placeholder'] = t('Enter the subject of the question');
+		  $form['submitted']['tekst']['#markup'] = t('Send us your question and we will respond to it within 3 hours (during working hours)');
+		  $form['submitted']['tekst_voprosa']['#attributes']['placeholder'] = t('Your question');
+      break;
+    case 'webform_client_form_107':
+		  $form['submitted']['imya_familiya']['#attributes']['placeholder'] = t('Name Surname');
+		  $form['submitted']['elektronnyy_adres']['#attributes']['placeholder'] = t('E-mail adress');
+		  $form['submitted']['tema_pisma']['#attributes']['placeholder'] = t('Enter the subject of the question');
+		  $form['submitted']['tema_pisma']['#title'] = t('Enter the subject of the question');
+		  $form['submitted']['tekst']['#markup'] = t('Those who point out the topic we respond faster');
+		  $form['submitted']['tekst_pisma']['#attributes']['placeholder'] = t('Text of letter');
       break;
   }
 }

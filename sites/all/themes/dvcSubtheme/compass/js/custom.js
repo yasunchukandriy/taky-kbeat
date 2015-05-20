@@ -49,15 +49,24 @@ Drupal.behaviors.footerIfIeCustom = {
 Drupal.behaviors.siteMap = {
   attach: function(context, settings) {
     var HeightFoo = $('ul.dropdown-menu');
-    $('.site-map-block').find( 'ul.dropdown-menu').removeClass('dropdown-menu');
+    $('.page-site-map .region-content .menu').find( 'ul.dropdown-menu').removeClass('dropdown-menu');
   }
 };
 
 
 Drupal.behaviors.servisesUnited = {
   attach: function(context, settings) {
-    
+    $('.region-footer ul.menu li ul').remove();
+    $('.region-footer ul.menu li.dropdown a').removeAttr('data-target');
+    $('.region-footer ul.menu li.dropdown a').removeAttr('dropdown');
+    $('.region-footer ul.menu li.dropdown a').removeAttr('data-toggle');
+    $('.region-footer ul.menu li span.caret').remove();
+    $('.region-footer ul.menu li').removeClass('expanded dropdown');
     $('.node-type-services .field-name-field-add-file, .node-type-services  .field-name-field-links').wrapAll( "<div class='newwrapper' />");
+
+    if ($('.view-questions-and-answers').length > 0) {
+      $('.view-questions-and-answers .view-content .panel.panel-default:first-child a').click();
+    }
     // $('.node-type-services.i18n-ru .field-name-field-add-file a').each(function(){
     //   $(this).text('Скачать перечень документов');
     // });
