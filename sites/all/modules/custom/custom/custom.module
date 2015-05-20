@@ -245,6 +245,7 @@ function custom_query_alter(&$query) {
  * Implements hook_form_alter().
  */
 function custom_form_alter(&$form, &$form_state, $form_id) {
+
   switch ($form_id) {
     case 'unisender_subscribe_subscribe_form':
       $form['name']['#title_display'] = 'invisible';
@@ -254,6 +255,8 @@ function custom_form_alter(&$form, &$form_state, $form_id) {
       $form['email']['#weight'] = 1;
       $form['email']['#attributes']['placeholder'] = t('E-mail adress');
       $form['name']['#attributes']['placeholder'] = t('Name Surname');
+      $form['actions']['submit']['#value'] = t('Subscribe');
+      // drupal_set_message('<pre><h1><i style="color:grey"><u>debug:</u></i></h1> ' . check_plain(print_r($form, 1)) . '</pre>');
       $form['#submit'][] = 'custom_unisender_subscribe_subscribe_form_submit';
       break;
     case 'webform_client_form_308':

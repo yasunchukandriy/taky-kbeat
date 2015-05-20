@@ -1,7 +1,7 @@
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
     
-      <div class="navbar-header col-xs-3">
+      <div class="navbar-header col-xs-25">
         
         <?php if ($logo): ?>
         <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -23,7 +23,7 @@
       <?php endif; ?>
       
       <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-        <div class="navbar-collapse collapse col-xs-9">
+        <div class="navbar-collapse collapse col-xs-75">
           <nav role="navigation">
             <?php if (!empty($page['navigation'])): ?>
               <?php print render($page['navigation']); ?>
