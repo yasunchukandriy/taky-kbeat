@@ -14,9 +14,38 @@
  * Implements hook_menu_alter().
  */
 function custom_menu_alter(&$items) {
-  $items ['node']['access callback'] = FALSE;
-  // $items ['search/node']['access callback'] = FALSE;
+	$items['node']['page callback'] = 'custom_redirect_node_page';
   $items['search']['title'] = t('Search results');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function custom_menu() {
+	$items = array();
+
+  $items['page-not-found'] = array(
+  	'title' 				=> t('Error 404'),
+  	'page callback' => 'custom_404_error_callback',
+  	'access callback' => TRUE,
+  );
+  
+  return $items;
+}
+/**
+ * Callback function for page 404.
+ */
+function custom_404_error_callback() {
+	$content  = '<h2>'. t('Page not found') . '</h2>';
+	$content .= '<p>'. t('Page you have requested was not found. Perhaps it has been moved or deleted.') . '</p>';
+	return $content;
+}
+
+/**
+ * Callback function for page node.
+ */
+function custom_redirect_node_page() {
+	drupal_goto('<front>');
 }
 
 /**
@@ -113,6 +142,13 @@ function custom_block_view_alter(&$data, $block) {
 		global $language;
     $path = drupal_is_front_page() ? '/' : $_GET['q'];
 		$links = language_negotiation_get_switch_links('language', $path);
+		if ($language->language == 'ru') {
+			$language->native = 'Рус';
+		} else {
+			$language->native = 'Aнгл';
+		}
+		$links->links['en']['title'] = 'Aнгл';
+		$links->links['ru']['title'] = 'Рус';
 
     if (isset($links->links)) {
       $variables = array('links' => $links->links, 'attributes' => array('class' => array('dropdown-menu')));
