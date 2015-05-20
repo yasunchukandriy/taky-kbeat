@@ -7397,7 +7397,7 @@ header .menu.navbar-nav > li > a.active-trail:before {
   width: 100%;
   height: 71px;
 }
-header .menu.navbar-nav > li.active > :hover,
+header .menu.navbar-nav > li.active > a:hover,
 header .menu.navbar-nav > li.active > a:focus,
 header .menu.navbar-nav > li.active > a:active {
   background-color: transparent;
