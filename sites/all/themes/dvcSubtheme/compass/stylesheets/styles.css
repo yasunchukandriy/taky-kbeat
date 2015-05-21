@@ -8216,16 +8216,22 @@ header .menu.navbar-nav > li.first {
   text-align: center;
   width: 370px;
   height: 275px;
+}
+.page-node .node .field-type-image .field-item img {
   margin: 0 auto;
 }
 .page-node .node .field-name-post-date {
   color: #777777;
   margin-bottom: 30px;
 }
+.page-node .node .field-name-field-full-content,
 .page-node .node .field-name-body {
   margin-bottom: 35px;
   color: #000;
 }
+.page-node .node .field-name-field-full-content h2,
+.page-node .node .field-name-field-full-content h3,
+.page-node .node .field-name-field-full-content h4,
 .page-node .node .field-name-body h2,
 .page-node .node .field-name-body h3,
 .page-node .node .field-name-body h4 {
@@ -8438,7 +8444,9 @@ header .menu.navbar-nav > li.first {
   background-color: #fff;
   display: block;
 }
+.page-node-104 .field-name-field-full-content h2,
 .page-node-104 .field-name-body h2,
+.page-page-not-found .field-name-field-full-content h2,
 .page-page-not-found .field-name-body h2 {
   font-size: 25px;
   font-size: 2.5rem;
@@ -8447,7 +8455,9 @@ header .menu.navbar-nav > li.first {
   margin-top: 0px;
   line-height: 1.1;
 }
+.page-node-104 .field-name-field-full-content p,
 .page-node-104 .field-name-body p,
+.page-page-not-found .field-name-field-full-content p,
 .page-page-not-found .field-name-body p {
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;
