@@ -6938,7 +6938,7 @@ select:active, select:focus {
   font-size: 35px;
   font-size: 3.5rem;
   color: #ffffff;
-  height: 162px;
+  min-height: 162px;
   text-align: center;
   border: none;
 }
@@ -8133,7 +8133,7 @@ header .menu.navbar-nav > li.first {
   font-size: 35px;
   font-size: 3.5rem;
   color: #ffffff;
-  height: 162px;
+  min-height: 162px;
   text-align: center;
 }
 .page-news h1.page-header:before {
